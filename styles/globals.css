@@ -4,7 +4,7 @@
 
 @layer components {
   .link {
-    @apply cursor-pointer hover:text-red-500 py-4;
+    @apply cursor-pointer hover:text-red-500 py-4 transition ease-in-out duration-200;
   }
 
   .activeLink {
