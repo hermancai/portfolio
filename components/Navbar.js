@@ -1,19 +1,13 @@
-function Navbar() {
+import NavLink from "./NavLink";
+
+function Navbar({ homeInView, aboutInView, projectsInView, contactInView }) {
   return (
     <div className="flex sticky top-0">
       <div className="grid w-full grid-cols-4 text-center bg-gray-700">
-        <a className="link" href="#home">
-          Home
-        </a>
-        <a className="link" href="#about">
-          About
-        </a>
-        <a className="link" href="#projects">
-          Projects
-        </a>
-        <a className="link" href="#contact">
-          Contact
-        </a>
+        <NavLink title="home" inView={homeInView} />
+        <NavLink title="about" inView={aboutInView} />
+        <NavLink title="projects" inView={projectsInView} />
+        <NavLink title="contact" inView={contactInView} />
       </div>
     </div>
   );
