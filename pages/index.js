@@ -2,6 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
 
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
       </Head>
       <Hero />
       <Navbar />
+      <About />
+      <Projects />
+      <Contact />
     </div>
   );
 }
