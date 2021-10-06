@@ -14,11 +14,12 @@ export default function Home() {
         <meta name="description" content="Herman Cai's portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
+
+      <Hero id="home" />
       <Navbar />
-      <About />
-      <Projects />
-      <Contact />
+      <About id="about" />
+      <Projects id="projects" />
+      <Contact id="contact" />
     </div>
   );
 }

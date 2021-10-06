@@ -1,6 +1,6 @@
-function Hero() {
+function Hero({ id }) {
   return (
-    <div className="flex w-full items-center justify-center h-screen">
+    <div id={id} className="flex w-full items-center justify-center h-screen">
       <p>Hello, I'm Herman.</p>
     </div>
   );

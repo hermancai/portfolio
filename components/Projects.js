@@ -1,6 +1,6 @@
-function Projects() {
+function Projects({ id }) {
   return (
-    <div className="flex justify-center items-center w-full h-screen">
+    <div id={id} className="flex justify-center items-center w-full h-screen">
       Projects
     </div>
   );
