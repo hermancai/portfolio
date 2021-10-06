@@ -11,7 +11,7 @@ export default function Home() {
   const aboutRef = useRef();
   const projectsRef = useRef();
   const contactRef = useRef();
-  const [homeInView, setHomeLink] = useState(false);
+  const [homeInView, setHomeLink] = useState(true);
   const [aboutInView, setAboutLink] = useState(false);
   const [projectsInView, setProjectsLink] = useState(false);
   const [contactInView, setContactLink] = useState(false);
@@ -43,7 +43,7 @@ export default function Home() {
           }
         });
       },
-      { rootMargin: "0px", threshold: 0.2 }
+      { threshold: 0.2 }
     );
     refList.forEach((ref) => {
       if (ref.current) {
