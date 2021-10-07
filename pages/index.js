@@ -71,15 +71,15 @@ export default function Home() {
         projectsInView={projectsInView}
       />
 
-      <div id="aboutWrapper" ref={aboutRef}>
+      <div id="aboutWrapper" className="wrapper" ref={aboutRef}>
         <About id="about" />
       </div>
 
-      <div id="projectsWrapper" ref={projectsRef}>
+      <div id="projectsWrapper" className="wrapper" ref={projectsRef}>
         <Projects id="projects" />
       </div>
 
-      <div id="contactWrapper" ref={contactRef}>
+      <div id="contactWrapper" className="wrapper" ref={contactRef}>
         <Contact id="contact" />
       </div>
     </div>

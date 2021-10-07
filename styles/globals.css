@@ -10,4 +10,8 @@
   .activeLink {
     @apply text-red-500;
   }
+
+  .wrapper {
+    @apply pt-[60px];
+  }
 }

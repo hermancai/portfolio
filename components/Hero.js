@@ -9,7 +9,7 @@ function Hero({ id }) {
       <p>
         Hello, I'm <span className="text-red-500">Herman</span>.
       </p>
-      <p>I am a full-stack developer.</p>
+      <p>I'm a full-stack developer.</p>
       <ChevronDoubleDownIcon
         className="w-8 mt-10 animate-bounce cursor-pointer text-red-500"
         onClick={() => {
