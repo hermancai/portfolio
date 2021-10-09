@@ -2,8 +2,8 @@ import SkillBox from "./SkillBox";
 
 function SkillTable() {
   return (
-    <div className="flex flex-col justify-center items-center w-full md:w-1/2 lg:w-2/5">
-      <p className="text-3xl my-3">Technologies</p>
+    <div className="flex flex-col justify-center items-center w-full md:w-1/2 lg:w-2/5 lg:justify-start lg:items-start mx-2">
+      <p className="text-3xl my-3 mx-1 lg:mx-2">Technologies</p>
 
       <div className="skillRow">
         <SkillBox name="Javascript" imgPath="/logos/javascript_logo.png" />

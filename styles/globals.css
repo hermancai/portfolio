@@ -16,7 +16,7 @@
   }
 
   .skillRow {
-    @apply flex flex-wrap mx-2 justify-center items-center;
+    @apply flex flex-wrap justify-center items-center lg:justify-start lg:items-start;
   }
 
   .formSection {
