@@ -27,16 +27,16 @@ export default function Home() {
             setProjectsLink(false);
             setContactLink(false);
             switch (entry.target.id) {
-              case "homeWrapper":
+              case "home":
                 setHomeLink(true);
                 break;
-              case "aboutWrapper":
+              case "about":
                 setAboutLink(true);
                 break;
-              case "projectsWrapper":
+              case "projects":
                 setProjectsLink(true);
                 break;
-              case "contactWrapper":
+              case "contact":
                 setContactLink(true);
                 break;
             }
@@ -60,8 +60,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div id="homeWrapper" ref={homeRef}>
-        <Hero id="home" />
+      <div id="home" ref={homeRef}>
+        <Hero />
       </div>
 
       <Navbar
@@ -71,16 +71,16 @@ export default function Home() {
         projectsInView={projectsInView}
       />
 
-      <div id="aboutWrapper" className="wrapper" ref={aboutRef}>
-        <About id="about" />
+      <div id="about" className="wrapper" ref={aboutRef}>
+        <About />
       </div>
 
-      <div id="projectsWrapper" className="wrapper" ref={projectsRef}>
-        <Projects id="projects" />
+      <div id="projects" className="wrapper" ref={projectsRef}>
+        <Projects />
       </div>
 
-      <div id="contactWrapper" className="wrapper" ref={contactRef}>
-        <Contact id="contact" />
+      <div id="contact" className="wrapper" ref={contactRef}>
+        <Contact />
       </div>
     </div>
   );

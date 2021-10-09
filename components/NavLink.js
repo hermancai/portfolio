@@ -10,7 +10,7 @@ function NavLink({ title, inView }) {
   return (
     <a
       className={`link capitalize ${activeLink ? "activeLink" : ""}`}
-      href={`#${title}Wrapper`}
+      href={`#${title}`}
     >
       {title}
     </a>

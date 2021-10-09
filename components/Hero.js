@@ -14,7 +14,7 @@ function Hero({ id }) {
         className="w-8 mt-10 animate-bounce cursor-pointer text-red-500"
         onClick={() => {
           document
-            .getElementById("aboutWrapper")
+            .getElementById("about")
             .scrollIntoView({ behavior: "smooth" });
         }}
       />
