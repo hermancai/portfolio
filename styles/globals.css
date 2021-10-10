@@ -30,4 +30,8 @@
   .errorMessage {
     @apply text-red-500 text-sm;
   }
+
+  .projectButton {
+    @apply flex-grow bg-gray-800 rounded py-1 hover:text-red-500 flex flex-row justify-center items-center;
+  }
 }
