@@ -1,13 +1,11 @@
-import NavLink from "./NavLink";
-
-function Navbar({ homeInView, aboutInView, projectsInView, contactInView }) {
+function Navbar() {
   return (
-    <div className="flex sticky top-0 z-10">
-      <div className="grid w-full grid-cols-4 text-center bg-gray-700">
-        <NavLink title="home" inView={homeInView} />
-        <NavLink title="about" inView={aboutInView} />
-        <NavLink title="projects" inView={projectsInView} />
-        <NavLink title="contact" inView={contactInView} />
+    <div className="flex fixed w-full bg-gray-900">
+      <div className="flex w-full justify-evenly py-5 sm:space-x-10 sm:justify-end md:space-x-16 sm:px-16">
+        <p>Home</p>
+        <p>About</p>
+        <p>Projects</p>
+        <p>Contact</p>
       </div>
     </div>
   );
