@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer components {
+  .linkButton {
+    @apply cursor-pointer w-[150px] rounded flex justify-center items-center py-1 px-2 border border-red-500;
+  }
+
+  .emptyButton {
+    @apply bg-gray-900 text-red-500;
+  }
+
+  .fillButton {
+    @apply bg-red-500 text-black;
+  }
+
   .link {
     @apply cursor-pointer hover:text-red-500 py-4 transition ease-in-out duration-200;
   }

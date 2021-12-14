@@ -15,9 +15,9 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      <Hero />
-      <About />
-      
+      <Hero id="hero" />
+      <About id="about" />
+      <Projects id="projects" />
     </div>
   );
 }
