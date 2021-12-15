@@ -8,11 +8,11 @@ function Projects({ id }) {
 
   return (
     <div id={id}>
-      <div className="flex flex-col w-full items-center mb-16">
+      <div className="flex flex-col w-full items-center pt-[100px]">
         <div className="flex flex-col w-4/5 space-y-10">
           <p className="text-2xl underline underline-offset-8 decoration-4 decoration-red-500">Projects</p>
-          <div className="flex flex-wrap bg-gray-900 rounded w-full p-8 gap-5 justify-between">
-            <div className="flex flex-col gap-5">
+          <div className="bg-gray-900 rounded w-full p-8 gap-5 grid grid-cols-1 md:grid-cols-2">
+            <div className="flex flex-col gap-5 max-w-max">
               <p className="font-bold text-2xl">Earthquake Mapper</p>
               <p className="italic text-gray-400">
                 Find past earthquake events on a map by using customizable search terms.

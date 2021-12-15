@@ -1,12 +1,5 @@
-import Image from "next/image";
-
-function SkillTable({ name, imgPath }) {
-  return (
-    <div className="flex space-x-2 rounded-md bg-gray-900 py-2 px-3 m-1 lg:m-2">
-      <Image src={imgPath} height={25} width={25} />
-      <p>{name}</p>
-    </div>
-  );
+function SkillBox({ name }) {
+  return <p className="rounded-md bg-gray-700 px-3 py-1 w-min">{name}</p>;
 }
 
-export default SkillTable;
+export default SkillBox;

@@ -41,7 +41,7 @@ function EmblaCarousel({ slides, imageFunc }) {
   }, [embla, setScrollSnaps, onSelect]);
 
   return (
-    <div className="mx-auto max-w-[475px] space-y-2">
+    <div className="max-w-[475px] space-y-2">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((index) => (
