@@ -23,7 +23,7 @@ function EmailForm() {
           type: "success",
         });
       } else {
-        toast.notify("Your message could not be send.", {
+        toast.notify("Your message could not be sent.", {
           duration: 4,
           type: "error",
         });
@@ -35,7 +35,7 @@ function EmailForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       id="contactForm"
-      className="flex flex-col space-y-5 rounded w-[90%] bg-white text-gray-800 lg:w-1/2 md:w-3/4 p-5 mt-5 mb-10 text-sm"
+      className="flex flex-col space-y-5 rounded bg-gray-900 text-white p-5 text-sm w-full"
     >
       <div className="formSection">
         <label htmlFor="name">Name</label>
@@ -47,13 +47,10 @@ function EmailForm() {
         />
 
         {errors.name ? (
-          <>
-            {errors.name.type === "required" && (
-              <p className="errorMessage">{errors.name.message}</p>
-            )}
-          </>
+          <>{errors.name.type === "required" && <p className="errorMessage">{errors.name.message}</p>}</>
         ) : null}
       </div>
+
       <div className="formSection">
         <label htmlFor="email">Email</label>
         <input
@@ -70,15 +67,12 @@ function EmailForm() {
         />
         {errors.email ? (
           <>
-            {errors.email.type === "required" && (
-              <p className="errorMessage">{errors.email.message}</p>
-            )}
-            {errors.email.type === "pattern" && (
-              <p className="errorMessage">{errors.email.message}</p>
-            )}
+            {errors.email.type === "required" && <p className="errorMessage">{errors.email.message}</p>}
+            {errors.email.type === "pattern" && <p className="errorMessage">{errors.email.message}</p>}
           </>
         ) : null}
       </div>
+
       <div className="formSection">
         <label htmlFor="message">Message</label>
         <textarea
@@ -89,19 +83,17 @@ function EmailForm() {
           rows="5"
         />
         {errors.message ? (
-          <>
-            {errors.message.type === "required" && (
-              <p className="errorMessage">{errors.message.message}</p>
-            )}
-          </>
+          <>{errors.message.type === "required" && <p className="errorMessage">{errors.message.message}</p>}</>
         ) : null}
       </div>
+
       <button
-        className="bg-gray-800 text-white rounded py-2 px-4 w-min self-end active:scale-90"
+        className="bg-gray-900 text-white border border-red-500 hover:fillButton rounded py-2 px-4 w-min self-end active:scale-90"
         type="submit"
       >
         Submit
       </button>
+
       <ToastContainer align="left" />
     </form>
   );
