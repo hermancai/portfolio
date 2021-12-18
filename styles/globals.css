@@ -4,7 +4,15 @@
 
 @layer components {
   .navbarLink {
-    @apply cursor-pointer transition duration-150 ease-out hover:ease-in hover:text-red-500;
+    @apply cursor-pointer transition duration-150 ease-out hover:text-red-500;
+  }
+
+  .skillBox {
+    @apply rounded-md bg-gray-700 px-3 py-1 w-min;
+  }
+
+  .projectLabel {
+    @apply rounded-lg bg-gray-700 px-2 py-[1px] w-min font-light text-sm;
   }
 
   .linkButton {

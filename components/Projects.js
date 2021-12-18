@@ -1,6 +1,5 @@
-import ProjectLabel from "../components/ProjectLabel";
 import EmblaCarousel from "../components/EmblaCarousel";
-import { DesktopComputerIcon, CodeIcon } from "@heroicons/react/outline";
+import { DesktopComputerIcon, CodeIcon } from "@heroicons/react/solid";
 import { eqmapperImagesCount, eqmapperImagesByIndex } from "../public/images/eqmapper";
 
 function Projects({ id }) {
@@ -18,9 +17,9 @@ function Projects({ id }) {
                 Find past earthquake events on a map by using customizable search terms.
               </p>
               <div className="flex flex-wrap gap-2">
-                <ProjectLabel name="HTML" />
-                <ProjectLabel name="CSS" />
-                <ProjectLabel name="Javascript" />
+                <p className="projectLabel">HTML</p>
+                <p className="projectLabel">CSS</p>
+                <p className="projectLabel">Javascript</p>
               </div>
               <div className="flex flex-wrap gap-4">
                 <a
