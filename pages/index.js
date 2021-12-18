@@ -18,6 +18,7 @@ export default function Home() {
       <Hero id="hero" />
       <About id="about" />
       <Projects id="projects" />
+      <Contact id="contact" />
     </div>
   );
 }
