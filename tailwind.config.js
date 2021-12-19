@@ -16,6 +16,9 @@ module.exports = {
         customSpin: "customSpin 4s infinite",
       },
     },
+    backgroundImage: {
+      "hero-bg": "url('../public/images/heroBackground.png')",
+    },
   },
   plugins: [],
 };
