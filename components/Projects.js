@@ -9,7 +9,7 @@ function Projects({ id }) {
     <div id={id}>
       <div className="flex flex-col w-full items-center pt-[100px]">
         <div className="flex flex-col w-4/5 space-y-10">
-          <p className="text-2xl underline underline-offset-8 decoration-4 decoration-red-500">Projects</p>
+          <p className="sectionLabel">Projects</p>
           <div className="bg-gray-900 rounded w-full p-8 gap-5 grid grid-cols-1 md:grid-cols-2">
             <div className="flex flex-col gap-5 max-w-max">
               <p className="font-bold text-2xl">Earthquake Mapper</p>
@@ -23,7 +23,7 @@ function Projects({ id }) {
               </div>
               <div className="flex flex-wrap gap-4">
                 <a
-                  className="linkButton fillButton hover:emptyButton"
+                  className="linkButton fillButton"
                   href="https://geo-util.herokuapp.com/earthquake_mapper"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -32,7 +32,7 @@ function Projects({ id }) {
                   Live Project
                 </a>
                 <a
-                  className="linkButton emptyButton hover:fillButton"
+                  className="linkButton outlineButton"
                   href="https://github.com/hermancai/earthquake_tracker"
                   target="_blank"
                   rel="noopener noreferrer"

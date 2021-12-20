@@ -3,7 +3,7 @@ import { ChevronDoubleDownIcon } from "@heroicons/react/solid";
 function Hero({ id }) {
   return (
     <div id={id} className="flex flex-col h-screen items-center justify-center space-y-16 bg-hero-bg bg-cover">
-      <div className="flex flex-col space-y-3 w-4/5 sm:w-3/4 md:w-[70%] justify-items-start">
+      <div className="flex flex-col space-y-3 w-4/5 sm:w-3/4 md:w-[70%] justify-items-start font-serif">
         <p className="text-red-500">Hi, my name is</p>
         <p className="text-3xl">Herman Cai</p>
         <p className="text-3xl text-gray-400">I am a web developer.</p>

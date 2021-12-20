@@ -94,11 +94,15 @@ function EmailForm() {
         </div>
 
         <button
-          className="flex justify-center bg-gray-900 text-white border border-red-500 hover:fillButton rounded py-2 px-4 w-24 self-end active:scale-90"
+          className="flex justify-center border rounded py-2 px-4 w-24 self-end active:scale-90 outlineButton ease-in-out duration-200"
           type="submit"
           disabled={!activeButton}
         >
-          {activeButton ? <p>Send</p> : <CogIcon className="h-5 text-gray-300 animate-customSpin" />}
+          {activeButton ? (
+            <p className="font-semibold">Send</p>
+          ) : (
+            <CogIcon className="h-5 text-gray-300 animate-customSpin" />
+          )}
         </button>
       </form>
       <div className="flex flex-col fixed bottom-4 left-4">{toasts.map((entry) => entry)}</div>
