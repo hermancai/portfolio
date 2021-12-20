@@ -13,7 +13,10 @@ export default function Home() {
         <title>Herman Cai's Portfolio</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="author" content="Herman Cai" />
+        <meta name="description" content="Herman Cai full stack web developer portfolio" />
         <link rel="icon" href="/images/favicon.ico" />
+        <html lang="en-US" />
       </Head>
 
       <Navbar />
