@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="author" content="Herman Cai" />
         <meta name="description" content="Herman Cai full stack web developer portfolio" />
         <link rel="icon" href="/images/favicon.ico" />
-        <html lang="en-US" />
+        {/* <html lang="en-US" /> */}
       </Head>
 
       <Navbar />
