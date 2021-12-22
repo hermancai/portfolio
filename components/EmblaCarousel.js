@@ -3,7 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 
-function EmblaCarousel({ slides, imageFunc }) {
+function EmblaCarousel({ slides, imageFunc, projectName }) {
   const [emblaRef, embla] = useEmblaCarousel({
     align: "start",
     loop: true,
@@ -46,8 +46,13 @@ function EmblaCarousel({ slides, imageFunc }) {
         <div className="flex">
           {slides.map((index) => (
             <div className="relative flex flex-none flex-wrap w-full mx-10" key={index}>
-              <div>
-                <Image src={imageFunc(index)} height={267} width={475} />
+              <div className="relative h-[267px] w-[475px]">
+                <Image
+                  src={imageFunc(index)}
+                  layout={"fill"}
+                  objectFit={"contain"}
+                  alt={`${projectName} screenshot ${index + 1}`}
+                />
               </div>
             </div>
           ))}
@@ -60,6 +65,7 @@ function EmblaCarousel({ slides, imageFunc }) {
             className={`w-2 h-2 rounded-full ${idx === selectedIndex ? "bg-red-500" : "bg-gray-500"}`}
             key={idx}
             onClick={() => scrollTo(idx)}
+            aria-label={`${projectName} button ${idx + 1}`}
           />
         ))}
         <ChevronRightIcon className="w-6 text-red-500 cursor-pointer" onClick={scrollNext} />

@@ -24,7 +24,7 @@ function Projects({ id }) {
               <div className="flex flex-wrap gap-4">
                 <a
                   className="linkButton fillButton"
-                  href="https://geo-util.herokuapp.com/earthquake_mapper"
+                  href="https://hermancai.github.io/earthquake_mapper/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -33,7 +33,7 @@ function Projects({ id }) {
                 </a>
                 <a
                   className="linkButton outlineButton"
-                  href="https://github.com/hermancai/earthquake_tracker"
+                  href="https://github.com/hermancai/earthquake_mapper"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -43,7 +43,11 @@ function Projects({ id }) {
               </div>
             </div>
             <div>
-              <EmblaCarousel slides={eqmapperSlides} imageFunc={eqmapperImagesByIndex} />
+              <EmblaCarousel
+                slides={eqmapperSlides}
+                imageFunc={eqmapperImagesByIndex}
+                projectName="earthquake mapper"
+              />
             </div>
           </div>
         </div>
