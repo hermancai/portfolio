@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-gray-800 text-white">
       <Head>
-        <title>Herman Cai's Portfolio</title>
+        <title>Herman Cai&apos;s Portfolio</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="author" content="Herman Cai" />
