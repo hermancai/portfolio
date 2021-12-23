@@ -1,0 +1,31 @@
+{
+  "name": "Herman Cai's Portfolio",
+  "short_name": "HC",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "/images/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/images/favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/GitHub-Mark-Light-64px.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "/images/In-White-96@2x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}
