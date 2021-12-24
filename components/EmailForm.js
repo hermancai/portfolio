@@ -26,14 +26,20 @@ function EmailForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then((res) => {
-      if (res.status === 200) {
-        createToast(<Toast message={SuccessMessage()} bgColor="bg-green-500" />);
-      } else {
-        createToast(<Toast message={ErrorMessage()} bgColor="bg-red-500" />);
-      }
-      setActiveButton(true);
-    });
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((result) => {
+        if (result.status === 200) {
+          console.log("Your email has been sent.");
+          createToast(<Toast message={SuccessMessage()} bgColor="bg-green-500" key={Date.now()} />);
+        } else {
+          console.log("Email sending error:", result.error);
+          createToast(<Toast message={ErrorMessage()} bgColor="bg-red-500" key={Date.now()} />);
+        }
+        setActiveButton(true);
+      });
   };
 
   return (
