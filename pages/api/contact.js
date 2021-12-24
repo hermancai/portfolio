@@ -1,4 +1,4 @@
-export default async function (req, res) {
+export default async function sendEmail(req, res) {
   return new Promise((resolve) => {
     const nodemailer = require("nodemailer");
     const transporter = nodemailer.createTransport({
