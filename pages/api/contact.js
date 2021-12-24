@@ -26,10 +26,10 @@ export default async function sendEmail(req, res) {
     transporter.sendMail(mailData, function (err, info) {
       if (err) {
         console.log(err);
-        res.status(500).end();
+        res.status(500).send({ error: err, status: 500 });
         return resolve();
       } else {
-        res.status(200).end();
+        res.status(200).send({ info: info.response, status: 200 });
         resolve();
       }
     });

@@ -16,6 +16,7 @@ export default function Home() {
         <meta name="author" content="Herman Cai" />
         <meta name="description" content="Herman Cai full stack web developer portfolio" />
         <meta name="theme-color" content="#111827" />
+        <meta name="robots" content="index,follow" />
         <link rel="manifest" href="manifest.json" />
         <link rel="apple-touch-icon" href="/images/favicon.ico" />
         <link rel="icon" href="/images/favicon.ico" />
