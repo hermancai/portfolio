@@ -105,7 +105,7 @@ function EmailForm() {
           )}
         </button>
       </form>
-      <div className="flex flex-col fixed bottom-4 left-4">{toasts.map((entry) => entry)}</div>
+      <div className="flex flex-col fixed bottom-4 left-4 z-10">{toasts.map((entry) => entry)}</div>
     </div>
   );
 }
