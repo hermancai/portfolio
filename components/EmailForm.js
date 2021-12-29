@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import Toast from "./Toast";
-import { CheckIcon, ExclamationCircleIcon, CogIcon } from "@heroicons/react/solid";
+import { CogIcon } from "@heroicons/react/solid";
 
 function EmailForm() {
   const [activeButton, setActiveButton] = useState(true);
@@ -33,10 +33,12 @@ function EmailForm() {
       .then((result) => {
         if (result.status === 200) {
           console.log("Your email has been sent.");
-          createToast(<Toast message={SuccessMessage()} bgColor="bg-green-500" key={Date.now()} />);
+          createToast(<Toast message="Your message has been sent." bgColor="bg-green-500" key={Date.now()} />);
         } else {
           console.log("Email sending error:", result.error);
-          createToast(<Toast message={ErrorMessage()} bgColor="bg-red-500" key={Date.now()} />);
+          createToast(
+            <Toast message="Your message cannot be sent at this time." bgColor="bg-red-500" key={Date.now()} />
+          );
         }
         setActiveButton(true);
       });
@@ -112,24 +114,6 @@ function EmailForm() {
         </button>
       </form>
       <div className="flex flex-col fixed bottom-4 left-4 z-10">{toasts.map((entry) => entry)}</div>
-    </div>
-  );
-}
-
-function SuccessMessage() {
-  return (
-    <div className="flex text-black items-baseline">
-      <CheckIcon className="h-4 mr-1" />
-      <p>Your message has been sent.</p>
-    </div>
-  );
-}
-
-function ErrorMessage() {
-  return (
-    <div className="flex text-black items-baseline">
-      <ExclamationCircleIcon className="h-4 mr-1" />
-      <p>Your message cannot be sent at this time.</p>
     </div>
   );
 }

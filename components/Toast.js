@@ -11,9 +11,9 @@ function Toast({ message, bgColor }) {
   }, []);
 
   return visible ? (
-    <div className={`${bgColor} p-2 rounded-md animate-slideIn flex flex-row`}>
-      <div>{message}</div>
-      <div className="cursor-pointer text-gray-500" onClick={() => setVisible(false)}>
+    <div className={`${bgColor} p-3 rounded-md animate-slideIn flex flex-row`}>
+      <p className="text-black">{message}</p>
+      <div className="cursor-pointer text-slate-800" onClick={() => setVisible(false)}>
         <XIcon className="h-6 ml-2" />
       </div>
     </div>
