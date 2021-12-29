@@ -5,15 +5,16 @@ export default async function sendEmail(req, res) {
       port: 465,
       host: "smtp.gmail.com",
       auth: {
-        user: process.env.BURNER_USER,
-        pass: process.env.BURNER_PASS,
+        type: "OAuth2",
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
       },
       secure: true,
     });
 
     const mailData = {
       from: process.env.BURNER_USER,
-      to: process.env.EMAIL_USER,
+      to: process.env.BURNER_USER,
       subject: `Message from ${req.body.name}`,
       text: req.body.message,
       html: `<div>
@@ -21,6 +22,11 @@ export default async function sendEmail(req, res) {
         <p>Email: ${req.body.email}</p>
         <p>Message: ${req.body.message}</p>
       </div>`,
+      auth: {
+        user: process.env.BURNER_USER,
+        refreshToken: process.env.REFRESH_TOKEN,
+        accessToken: process.env.ACCESS_TOKEN,
+      },
     };
 
     transporter.sendMail(mailData, function (err, info) {
