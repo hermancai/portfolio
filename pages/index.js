@@ -18,8 +18,8 @@ export default function Home() {
         <meta name="theme-color" content="#111827" />
         <meta name="robots" content="index,follow" />
         <link rel="manifest" href="manifest.json" />
-        <link rel="apple-touch-icon" href="/images/favicon.ico" />
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/images/favicon-180x180.png" />
+        <link rel="icon" href="/images/favicon-32x32.png" />
       </Head>
 
       <Navbar />
