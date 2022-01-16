@@ -1,16 +1,16 @@
+const nodemailer = require("nodemailer");
+const mg = require("nodemailer-mailgun-transport");
+
 export default async function sendEmail(req, res) {
   return new Promise((resolve) => {
-    const nodemailer = require("nodemailer");
-    const transporter = nodemailer.createTransport({
-      port: 465,
-      host: "smtp.gmail.com",
+    const auth = {
       auth: {
-        type: "OAuth2",
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
+        api_key: process.env.MAILGUN_API,
+        domain: process.env.MAILGUN_DOMAIN,
       },
-      secure: true,
-    });
+    };
+
+    const nodemailerMailgun = nodemailer.createTransport(mg(auth));
 
     const mailData = {
       from: process.env.BURNER_USER,
@@ -22,14 +22,9 @@ export default async function sendEmail(req, res) {
         <p>Email: ${req.body.email}</p>
         <p>Message: ${req.body.message}</p>
       </div>`,
-      auth: {
-        user: process.env.BURNER_USER,
-        refreshToken: process.env.REFRESH_TOKEN,
-        accessToken: process.env.ACCESS_TOKEN,
-      },
     };
 
-    transporter.sendMail(mailData, function (err, info) {
+    nodemailerMailgun.sendMail(mailData, (err, info) => {
       if (err) {
         console.log(err);
         res.status(500).send({ error: err, status: 500 });

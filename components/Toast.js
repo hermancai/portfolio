@@ -7,7 +7,7 @@ function Toast({ message, bgColor }) {
   useEffect(() => {
     setTimeout(() => {
       setVisible(false);
-    }, 5000);
+    }, 10000);
   }, []);
 
   return visible ? (
