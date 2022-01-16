@@ -1,11 +1,11 @@
 import EmblaCarousel from "../components/EmblaCarousel";
 import { DesktopComputerIcon, CodeIcon } from "@heroicons/react/solid";
 import { eqmapperImagesCount, eqmapperImagesByIndex } from "../public/images/eqmapper";
-import { slackcloneImagesCount, slackcloneImagesByIndex } from "../public/images/slackclone";
+import { chatappImagesCount, chatappImagesByIndex } from "../public/images/chatapp";
 
 function Projects({ id }) {
   const eqmapperSlides = Array.from(Array(eqmapperImagesCount).keys());
-  const slackcloneSlides = Array.from(Array(slackcloneImagesCount).keys());
+  const chatappSlides = Array.from(Array(chatappImagesCount).keys());
 
   return (
     <div id={id}>
@@ -15,20 +15,20 @@ function Projects({ id }) {
 
           <div className="bg-gray-900 rounded w-full p-8 gap-5 grid grid-cols-1 md:grid-cols-2">
             <div className="flex flex-col gap-5 max-w-max">
-              <p className="font-bold text-2xl">Slack Clone</p>
+              <p className="font-bold text-2xl">Chat App</p>
               <p className="italic text-gray-400">
-                This is a chat app made to look like Slack. Logging in requires Google Authentication via Gmail.
+                This is an instant messaging app. Logging in requires Google Authentication via Gmail.
               </p>
               <div className="flex flex-wrap gap-2">
                 <p className="projectLabel">React</p>
                 <p className="projectLabel">Redux</p>
-                <p className="projectLabel">Styled Components</p>
+                <p className="projectLabel">tailwindcss</p>
                 <p className="projectLabel">Firebase</p>
               </div>
               <div className="flex flex-wrap gap-4">
                 <a
                   className="linkButton fillButton"
-                  href="https://slack-clone-893d9.web.app"
+                  href="https://chatapp-e7cdc.web.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -37,7 +37,7 @@ function Projects({ id }) {
                 </a>
                 <a
                   className="linkButton outlineButton"
-                  href="https://github.com/hermancai/slack-clone"
+                  href="https://github.com/hermancai/chat_app"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -47,7 +47,7 @@ function Projects({ id }) {
               </div>
             </div>
             <div>
-              <EmblaCarousel slides={slackcloneSlides} imageFunc={slackcloneImagesByIndex} projectName="slack clone" />
+              <EmblaCarousel slides={chatappSlides} imageFunc={chatappImagesByIndex} projectName="chat app" />
             </div>
           </div>
 
