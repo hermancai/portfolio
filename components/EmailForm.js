@@ -28,7 +28,9 @@ function EmailForm() {
       body: JSON.stringify(data),
     })
       .then((res) => {
-        return res.json();
+        var results = res.json();
+        console.log(results);
+        return results;
       })
       .then((result) => {
         if (result.status === 200) {
