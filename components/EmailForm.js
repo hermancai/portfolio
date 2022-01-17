@@ -19,6 +19,8 @@ function EmailForm() {
 
   const onSubmit = (data) => {
     setActiveButton(false);
+    console.log(data);
+    console.log(JSON.stringify(data));
     fetch("/api/contact", {
       method: "POST",
       headers: {
@@ -33,6 +35,7 @@ function EmailForm() {
         return results;
       })
       .then((result) => {
+        console.log(result);
         if (result.status === 200) {
           console.log("Your email has been sent.");
           createToast(<Toast message="Your message has been sent." bgColor="bg-green-500" key={Date.now()} />);
