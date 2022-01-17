@@ -27,12 +27,12 @@ export default async function sendEmail(req, res) {
     nodemailerMailgun.sendMail(mailData, (err, info) => {
       if (err) {
         console.log(err);
-        res.end(JSON.stringify({ status: 500 }));
-        return resolve();
+        res.send({ status: 500 });
+        return resolve({ status: 500 });
       } else {
         console.log(info);
-        res.end(JSON.stringify({ status: 200 }));
-        resolve();
+        res.send({ status: 200 });
+        resolve({ status: 200 });
       }
     });
   });

@@ -20,7 +20,6 @@ function EmailForm() {
   const onSubmit = (data) => {
     setActiveButton(false);
     console.log(data);
-    console.log(JSON.stringify(data));
     fetch("/api/contact", {
       method: "POST",
       headers: {
@@ -29,18 +28,14 @@ function EmailForm() {
       },
       body: JSON.stringify(data),
     })
-      .then((res) => {
-        var results = res.json();
-        console.log(results);
-        return results;
-      })
+      .then((res) => res.json())
       .then((result) => {
         console.log(result);
         if (result.status === 200) {
           console.log("Your email has been sent.");
           createToast(<Toast message="Your message has been sent." bgColor="bg-green-500" key={Date.now()} />);
         } else {
-          console.log("Email sending error:", result.error);
+          console.log("Email sending error");
           createToast(
             <Toast message="Your message cannot be sent at this time." bgColor="bg-red-500" key={Date.now()} />
           );
