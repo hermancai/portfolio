@@ -27,15 +27,13 @@ function EmailForm() {
       },
       body: JSON.stringify(data),
     })
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((result) => {
         if (result.status === 200) {
           console.log("Your email has been sent.");
           createToast(<Toast message="Your message has been sent." bgColor="bg-green-500" key={Date.now()} />);
         } else {
-          console.log("Email sending error:", result.error);
+          console.log("Email sending error");
           createToast(
             <Toast message="Your message cannot be sent at this time." bgColor="bg-red-500" key={Date.now()} />
           );
