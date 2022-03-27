@@ -12,7 +12,7 @@
   }
 
   .skillBox {
-    @apply rounded-md bg-gray-700 px-3 py-1 w-min;
+    @apply rounded-md bg-gray-700 px-3 py-1 w-min whitespace-nowrap;
   }
 
   .projectLabel {

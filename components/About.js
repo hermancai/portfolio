@@ -1,3 +1,5 @@
+import ContactIcons from "./ContactIcons";
+
 function About({ id }) {
   return (
     <div id={id} className="flex w-full justify-center pt-[100px]">
@@ -6,19 +8,26 @@ function About({ id }) {
           <p className="sectionLabel">About Me</p>
           <div className="bg-gray-900 p-8 rounded flex-1 leading-loose text-gray-100">
             <p>
-              My name is <span className="text-red-500">Herman Cai</span>. I am a fullstack developer currently focused
-              on building with React and Node. I believe there is always more to learn, so I constantly strive to
-              develop new skills and improve my work. Please feel free to{" "}
+              My name is <span className="text-red-500">Herman Cai</span>. I am
+              a fullstack developer currently focused on building with React and
+              Node. I believe there is always more to learn, so I constantly
+              strive to develop new skills and improve my work. Please feel free
+              to{" "}
               <span
                 className="underline text-red-500 cursor-pointer"
                 onClick={() => {
-                  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+                  document
+                    .getElementById("contact")
+                    .scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 contact me
               </span>{" "}
               for any opportunities or inquiries.
             </p>
+            <div className="float-right mt-5">
+              <ContactIcons />
+            </div>
           </div>
         </div>
         <div className="flex flex-col w-full md:w-[45%] space-y-10">
@@ -30,18 +39,18 @@ function About({ id }) {
                 <p className="skillBox">React</p>
                 <p className="skillBox">HTML</p>
                 <p className="skillBox">CSS</p>
-                <p className="skillBox">tailwindcss</p>
-              </div>
-              <hr className="text-gray-500" />
-              <div className="flex flex-wrap gap-2">
+                <p className="skillBox">Tailwind CSS</p>
                 <p className="skillBox">Node</p>
                 <p className="skillBox">Express</p>
-                <p className="skillBox">PostgreSQL</p>
-                <p className="skillBox">Next.js</p>
+                <p className="skillBox">Python</p>
               </div>
               <hr className="text-gray-500" />
               <div className="flex flex-wrap gap-2">
-                <p className="skillBox">Github</p>
+                <p className="skillBox">PostgreSQL</p>
+                <p className="skillBox">MongoDB</p>
+                <p className="skillBox">Firebase</p>
+                <p className="skillBox">Next.js</p>
+                <p className="skillBox">React Redux</p>
                 <p className="skillBox">Git</p>
               </div>
             </div>
