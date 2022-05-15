@@ -9,11 +9,16 @@ import {
   chatappImagesByIndex,
 } from "../public/images/chatapp";
 import { ppmImagesCount, ppmImagesByIndex } from "../public/images/ppm";
+import {
+  weatherImagesCount,
+  weatherImagesByIndex,
+} from "../public/images/weather";
 
 function Projects({ id }) {
   const eqmapperSlides = Array.from(Array(eqmapperImagesCount).keys());
   const chatappSlides = Array.from(Array(chatappImagesCount).keys());
   const ppmSlides = Array.from(Array(ppmImagesCount).keys());
+  const weatherSlides = Array.from(Array(weatherImagesCount).keys());
 
   return (
     <div id={id}>
@@ -147,6 +152,46 @@ function Projects({ id }) {
                 slides={eqmapperSlides}
                 imageFunc={eqmapperImagesByIndex}
                 projectName="earthquake mapper"
+              />
+            </div>
+          </div>
+
+          <div className="bg-gray-900 rounded w-full p-8 gap-5 grid grid-cols-1 md:grid-cols-2">
+            <div className="flex flex-col gap-5 max-w-max">
+              <p className="font-bold text-2xl">Weather App</p>
+              <p className="italic text-gray-400">
+                This app displays a city's current weather and weekly forecast,
+                as well as info about the current moon cycle.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <p className="projectLabel">Next.js</p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  className="linkButton fillButton"
+                  href="https://weather-react-tawny.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <DesktopComputerIcon className="h-4 mr-2" />
+                  Live Project
+                </a>
+                <a
+                  className="linkButton outlineButton"
+                  href="https://github.com/hermancai/weather-react"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CodeIcon className="h-4 mr-2" />
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <div>
+              <EmblaCarousel
+                slides={weatherSlides}
+                imageFunc={weatherImagesByIndex}
+                projectName="weather app"
               />
             </div>
           </div>
