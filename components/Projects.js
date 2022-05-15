@@ -160,8 +160,8 @@ function Projects({ id }) {
             <div className="flex flex-col gap-5 max-w-max">
               <p className="font-bold text-2xl">Weather App</p>
               <p className="italic text-gray-400">
-                This app displays a city's current weather and weekly forecast,
-                as well as info about the current moon cycle.
+                {`This app displays a city's current weather and weekly forecast,
+                as well as info about the current moon cycle.`}
               </p>
               <div className="flex flex-wrap gap-2">
                 <p className="projectLabel">Next.js</p>
