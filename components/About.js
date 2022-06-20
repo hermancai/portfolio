@@ -31,27 +31,31 @@ function About({ id }) {
           </div>
         </div>
         <div className="flex flex-col w-full md:w-[45%] space-y-10">
-          <p className="sectionLabel">My Skills</p>
+          <p className="sectionLabel">Skills</p>
           <div className="bg-gray-900 p-8 rounded flex-1">
             <div className="flex flex-col space-y-3">
               <div className="flex flex-wrap gap-2">
                 <p className="skillBox">Javascript</p>
-                <p className="skillBox">React</p>
                 <p className="skillBox">HTML</p>
                 <p className="skillBox">CSS</p>
-                <p className="skillBox">Tailwind CSS</p>
-                <p className="skillBox">Node</p>
-                <p className="skillBox">Express</p>
                 <p className="skillBox">Python</p>
               </div>
               <hr className="text-gray-500" />
               <div className="flex flex-wrap gap-2">
+                <p className="skillBox">React</p>
+                <p className="skillBox">Redux</p>
+                <p className="skillBox">Tailwind</p>
+                <p className="skillBox">Node</p>
+                <p className="skillBox">Express</p>
                 <p className="skillBox">PostgreSQL</p>
                 <p className="skillBox">MongoDB</p>
                 <p className="skillBox">Firebase</p>
                 <p className="skillBox">Next.js</p>
-                <p className="skillBox">React Redux</p>
+              </div>
+              <hr className="text-gray-500" />
+              <div className="flex flex-wrap gap-2">
                 <p className="skillBox">Git</p>
+                <p className="skillBox">Agile</p>
               </div>
             </div>
           </div>
