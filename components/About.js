@@ -9,10 +9,9 @@ function About({ id }) {
           <div className="bg-gray-900 p-8 rounded flex-1 leading-loose text-gray-100">
             <p>
               My name is <span className="text-red-500">Herman Cai</span>. I am
-              a fullstack developer currently focused on building with React and
-              Node. I believe there is always more to learn, so I constantly
-              strive to develop new skills and improve my work. Please feel free
-              to{" "}
+              a full stack developer currently building with React and Node. I
+              believe there is always more to learn, so I constantly strive to
+              develop new skills and improve my work. Please feel free to{" "}
               <span
                 className="underline text-red-500 cursor-pointer"
                 onClick={() => {

@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 @layer components {
   .navbarLink {
     @apply cursor-pointer transition duration-150 ease-out hover:text-red-500;
   }
 
   .sectionLabel {
-    @apply text-3xl underline underline-offset-[12px] decoration-2 decoration-red-500 font-serif;
+    @apply text-3xl underline underline-offset-[12px] decoration-2 decoration-red-500;
   }
 
   .skillBox {
