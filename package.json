@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.4",
     "embla-carousel-react": "^6.0.2",
     "next": "^12.1.0",
