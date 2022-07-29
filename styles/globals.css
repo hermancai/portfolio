@@ -12,7 +12,7 @@
   }
 
   .sectionLabel {
-    @apply text-3xl underline underline-offset-[12px] decoration-2 decoration-red-500;
+    @apply text-3xl w-min whitespace-nowrap underline underline-offset-[12px] decoration-2 decoration-red-500;
   }
 
   .skillBox {

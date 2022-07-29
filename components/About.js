@@ -1,12 +1,26 @@
+import { useInView } from "react-intersection-observer";
+import TransitionSlideIn from "./TransitionSlideIn";
 import ContactIcons from "./ContactIcons";
 
 function About({ id }) {
+  const inViewOptions = {
+    fallbackInView: true,
+    triggerOnce: true,
+  };
+  const [aboutRef, aboutInView] = useInView(inViewOptions);
+  const [skillRef, skillInView] = useInView(inViewOptions);
+
   return (
     <div id={id} className="flex w-full justify-center pt-[100px]">
       <div className="flex flex-col space-y-[100px] md:space-y-0 md:flex-row w-4/5 justify-between">
         <div className="flex flex-col w-full md:w-[45%] space-y-10">
-          <p className="sectionLabel">About Me</p>
-          <div className="bg-gray-900 p-8 rounded flex-1 leading-loose text-gray-100">
+          <TransitionSlideIn inView={aboutInView}>
+            <p className="sectionLabel">About Me</p>
+          </TransitionSlideIn>
+          <div
+            ref={aboutRef}
+            className="bg-gray-900 p-8 rounded flex-1 leading-loose text-gray-100"
+          >
             <p>
               My name is <span className="text-red-500">Herman Cai</span>. I am
               a full stack developer currently building with React and Node. I
@@ -30,8 +44,10 @@ function About({ id }) {
           </div>
         </div>
         <div className="flex flex-col w-full md:w-[45%] space-y-10">
-          <p className="sectionLabel">Skills</p>
-          <div className="bg-gray-900 p-8 rounded flex-1">
+          <TransitionSlideIn inView={skillInView}>
+            <p className="sectionLabel">Skills</p>
+          </TransitionSlideIn>
+          <div ref={skillRef} className="bg-gray-900 p-8 rounded flex-1">
             <div className="flex flex-col space-y-3">
               <div className="flex flex-wrap gap-2">
                 <p className="skillBox">Javascript</p>
