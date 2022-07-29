@@ -1,4 +1,6 @@
 import EmblaCarousel from "../components/EmblaCarousel";
+import { useInView } from "react-intersection-observer";
+import TransitionSlideIn from "./TransitionSlideIn";
 import { DesktopComputerIcon, CodeIcon } from "@heroicons/react/solid";
 import {
   eqmapperImagesCount,
@@ -15,6 +17,10 @@ import {
 } from "../public/images/weather";
 
 function Projects({ id }) {
+  const [projectRef, projectInView] = useInView({
+    fallbackInView: true,
+    triggerOnce: true,
+  });
   const eqmapperSlides = Array.from(Array(eqmapperImagesCount).keys());
   const chatappSlides = Array.from(Array(chatappImagesCount).keys());
   const ppmSlides = Array.from(Array(ppmImagesCount).keys());
@@ -24,9 +30,14 @@ function Projects({ id }) {
     <div id={id}>
       <div className="flex flex-col w-full items-center pt-[100px]">
         <div className="flex flex-col w-4/5 space-y-10">
-          <p className="sectionLabel">Projects</p>
+          <TransitionSlideIn inView={projectInView}>
+            <p className="sectionLabel">Projects</p>
+          </TransitionSlideIn>
 
-          <div className="bg-gray-900 rounded w-full p-8 gap-5 grid grid-cols-1 md:grid-cols-2">
+          <div
+            ref={projectRef}
+            className="bg-gray-900 rounded w-full p-8 gap-5 grid grid-cols-1 md:grid-cols-2"
+          >
             <div className="flex flex-col gap-5 max-w-max">
               <p className="font-bold text-2xl">Personal Project Manager</p>
               <p className="italic text-gray-400">
