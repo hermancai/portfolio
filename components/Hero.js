@@ -1,7 +1,17 @@
 import { Transition } from "@headlessui/react";
+import { useState, useEffect } from "react";
 import { ChevronDoubleDownIcon } from "@heroicons/react/solid";
 
 function Hero({ id }) {
+  // HeadlessUI's Transition does not work in production build for the hero page,
+  //  but it works for other sections. This mount state is a workaround.
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 0);
+  }, []);
+
   return (
     <div
       id={id}
@@ -10,7 +20,7 @@ function Hero({ id }) {
       <div className="flex flex-col space-y-3 w-4/5 sm:w-3/4 md:w-[70%] justify-items-start">
         <Transition
           appear={true}
-          show={true}
+          show={isMounted}
           enter="transition-opacity duration-[2000ms]"
           enterFrom="opacity-0"
           enterTo="opacity-100"
@@ -21,7 +31,7 @@ function Hero({ id }) {
         </Transition>
         <Transition
           appear={true}
-          show={true}
+          show={isMounted}
           enter="transition-opacity duration-1000 delay-1000"
           enterFrom="opacity-0"
           enterTo="opacity-100"
@@ -32,7 +42,7 @@ function Hero({ id }) {
       <div className="flex w-4/5 sm:w-3/4 md:w-[70%]">
         <Transition
           appear={true}
-          show={true}
+          show={isMounted}
           enter="transition-all delay-1000 duration-1000"
           enterFrom="opacity-0 translate-y-[-200%]"
           enterTo="opacity-100 translate-y-0"
