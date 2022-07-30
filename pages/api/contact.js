@@ -17,7 +17,7 @@ export default async function sendEmail(req, res) {
       to: process.env.BURNER_USER,
       subject: `Message from ${req.body.name}`,
       text: req.body.message,
-      html: `<div>
+      html: `<div style="white-space:pre;">
         <p>Name: ${req.body.name}</p>
         <p>Email: ${req.body.email}</p>
         <p>Message: ${req.body.message}</p>
