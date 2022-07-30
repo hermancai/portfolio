@@ -1,23 +1,33 @@
+import Image from "next/image";
 import { Transition } from "@headlessui/react";
 import { useState, useEffect } from "react";
 import { ChevronDoubleDownIcon } from "@heroicons/react/solid";
 
-function Hero({ id }) {
+function Hero({ heroRef, aboutEntry }) {
   // HeadlessUI's Transition does not work in production build for the hero page,
   //  but it works for other sections. This mount state is a workaround.
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
-    setTimeout(() => {
-      setIsMounted(true);
-    }, 0);
+    setIsMounted(true);
   }, []);
 
   return (
-    <div
-      id={id}
-      className="flex flex-col h-screen items-center justify-center space-y-16 bg-hero-bg bg-cover"
-    >
-      <div className="flex flex-col space-y-3 w-4/5 sm:w-3/4 md:w-[70%] justify-items-start">
+    <div className="h-screen">
+      <div className="z-0">
+        <Image
+          alt="hero background"
+          src="/images/heroBackground.png"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          quality={100}
+          priority
+        />
+      </div>
+      <div
+        ref={heroRef}
+        className="flex flex-col h-screen items-start justify-center space-y-3 z-10 relative px-[10%] sm:px-[12%] md:px-[15%]"
+      >
         <Transition
           appear={true}
           show={isMounted}
@@ -38,21 +48,18 @@ function Hero({ id }) {
         >
           <p className="text-3xl text-gray-400">I am a web developer.</p>
         </Transition>
-      </div>
-      <div className="flex w-4/5 sm:w-3/4 md:w-[70%]">
+
         <Transition
           appear={true}
           show={isMounted}
           enter="transition-all delay-1000 duration-1000"
-          enterFrom="opacity-0 translate-y-[-200%]"
+          enterFrom="opacity-0 translate-y-[-100%]"
           enterTo="opacity-100 translate-y-0"
         >
           <div
-            className="flex justify-items-start cursor-pointer border-white rounded border py-1 pl-3 pr-2 items-center space-x-2 hover:border-red-500 hover:text-red-500 ease-in-out duration-200"
+            className="flex justify-items-start cursor-pointer border-white rounded border py-1 pl-3 pr-2 mt-12 items-center space-x-2 hover:border-red-500 hover:text-red-500 ease-in-out duration-200"
             onClick={() => {
-              document
-                .getElementById("about")
-                .scrollIntoView({ behavior: "smooth" });
+              aboutEntry.target?.scrollIntoView({ behavior: "smooth" });
             }}
           >
             <p className="text-sm">More About Me</p>
