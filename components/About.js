@@ -2,23 +2,23 @@ import { useInView } from "react-intersection-observer";
 import TransitionSlideIn from "./TransitionSlideIn";
 import ContactIcons from "./ContactIcons";
 
-function About({ id }) {
+function About({ aboutRef, contactEntry }) {
   const inViewOptions = {
     fallbackInView: true,
     triggerOnce: true,
   };
-  const [aboutRef, aboutInView] = useInView(inViewOptions);
-  const [skillRef, skillInView] = useInView(inViewOptions);
+  const [aboutHeaderRef, aboutHeaderInView] = useInView(inViewOptions);
+  const [skillHeaderRef, skillHeaderInView] = useInView(inViewOptions);
 
   return (
-    <div id={id} className="flex w-full justify-center pt-[100px]">
+    <div ref={aboutRef} className="flex w-full justify-center pt-[100px]">
       <div className="flex flex-col space-y-[100px] md:space-y-0 md:flex-row w-4/5 justify-between">
         <div className="flex flex-col w-full md:w-[45%] space-y-10">
-          <TransitionSlideIn inView={aboutInView}>
+          <TransitionSlideIn inView={aboutHeaderInView}>
             <p className="sectionLabel">About Me</p>
           </TransitionSlideIn>
           <div
-            ref={aboutRef}
+            ref={aboutHeaderRef}
             className="bg-gray-900 p-8 rounded flex-1 leading-loose text-gray-100"
           >
             <p>
@@ -29,9 +29,7 @@ function About({ id }) {
               <span
                 className="underline text-red-500 cursor-pointer"
                 onClick={() => {
-                  document
-                    .getElementById("contact")
-                    .scrollIntoView({ behavior: "smooth" });
+                  contactEntry.target?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 contact me
@@ -44,10 +42,10 @@ function About({ id }) {
           </div>
         </div>
         <div className="flex flex-col w-full md:w-[45%] space-y-10">
-          <TransitionSlideIn inView={skillInView}>
+          <TransitionSlideIn inView={skillHeaderInView}>
             <p className="sectionLabel">Skills</p>
           </TransitionSlideIn>
-          <div ref={skillRef} className="bg-gray-900 p-8 rounded flex-1">
+          <div ref={skillHeaderRef} className="bg-gray-900 p-8 rounded flex-1">
             <div className="flex flex-col space-y-3">
               <div className="flex flex-wrap gap-2">
                 <p className="skillBox">Javascript</p>

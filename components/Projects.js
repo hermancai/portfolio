@@ -16,8 +16,8 @@ import {
   weatherImagesByIndex,
 } from "../public/images/weather";
 
-function Projects({ id }) {
-  const [projectRef, projectInView] = useInView({
+function Projects({ projectsRef }) {
+  const [projectsHeaderRef, projectsHeaderInView] = useInView({
     fallbackInView: true,
     triggerOnce: true,
   });
@@ -27,15 +27,15 @@ function Projects({ id }) {
   const weatherSlides = Array.from(Array(weatherImagesCount).keys());
 
   return (
-    <div id={id}>
+    <div ref={projectsRef}>
       <div className="flex flex-col w-full items-center pt-[100px]">
         <div className="flex flex-col w-4/5 space-y-10">
-          <TransitionSlideIn inView={projectInView}>
+          <TransitionSlideIn inView={projectsHeaderInView}>
             <p className="sectionLabel">Projects</p>
           </TransitionSlideIn>
 
           <div
-            ref={projectRef}
+            ref={projectsHeaderRef}
             className="bg-gray-900 rounded w-full p-8 gap-5 grid grid-cols-1 md:grid-cols-2"
           >
             <div className="flex flex-col gap-5 max-w-max">
