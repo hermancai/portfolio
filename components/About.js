@@ -2,6 +2,20 @@ import { useInView } from "react-intersection-observer";
 import TransitionSlideIn from "./TransitionSlideIn";
 import ContactIcons from "./ContactIcons";
 
+const skills1 = ["Javascript", "HTML", "CSS", "Python", "C"];
+const skills2 = [
+  "React",
+  "Redux",
+  "Tailwind CSS",
+  "Node",
+  "Express",
+  "PostgreSQL",
+  "MongoDB",
+  "Firebase",
+  "Next.js",
+];
+const skills3 = ["Git", "Agile"];
+
 function About({ aboutRef, contactEntry }) {
   const inViewOptions = {
     fallbackInView: true,
@@ -9,6 +23,23 @@ function About({ aboutRef, contactEntry }) {
   };
   const [aboutHeaderRef, aboutHeaderInView] = useInView(inViewOptions);
   const [skillHeaderRef, skillHeaderInView] = useInView(inViewOptions);
+
+  const mapSkills = (skillList) => {
+    return (
+      <div className="flex flex-wrap gap-2">
+        {skillList.map((entry, i) => {
+          return (
+            <p
+              key={i}
+              className="rounded-md bg-gray-700 px-3 py-1 w-min whitespace-nowrap"
+            >
+              {entry}
+            </p>
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
     <div ref={aboutRef} className="flex w-full justify-center pt-[100px]">
@@ -47,29 +78,11 @@ function About({ aboutRef, contactEntry }) {
           </TransitionSlideIn>
           <div ref={skillHeaderRef} className="bg-gray-900 p-8 rounded flex-1">
             <div className="flex flex-col space-y-3">
-              <div className="flex flex-wrap gap-2">
-                <p className="skillBox">Javascript</p>
-                <p className="skillBox">HTML</p>
-                <p className="skillBox">CSS</p>
-                <p className="skillBox">Python</p>
-              </div>
+              {mapSkills(skills1)}
               <hr className="text-gray-500" />
-              <div className="flex flex-wrap gap-2">
-                <p className="skillBox">React</p>
-                <p className="skillBox">Redux</p>
-                <p className="skillBox">Tailwind</p>
-                <p className="skillBox">Node</p>
-                <p className="skillBox">Express</p>
-                <p className="skillBox">PostgreSQL</p>
-                <p className="skillBox">MongoDB</p>
-                <p className="skillBox">Firebase</p>
-                <p className="skillBox">Next.js</p>
-              </div>
+              {mapSkills(skills2)}
               <hr className="text-gray-500" />
-              <div className="flex flex-wrap gap-2">
-                <p className="skillBox">Git</p>
-                <p className="skillBox">Agile</p>
-              </div>
+              {mapSkills(skills3)}
             </div>
           </div>
         </div>

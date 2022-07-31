@@ -43,7 +43,7 @@ function Navbar({ inViewList, entryList }) {
           CONTACT
         </p>
       </div>
-      <span className="w-full h-[1px] bg-red-900"></span>
+      <span className="block w-full h-[0.5px] bg-red-900" />
     </div>
   );
 }

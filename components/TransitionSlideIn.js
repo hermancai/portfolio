@@ -8,8 +8,8 @@ const TransitionSlideIn = ({ children, inView }) => {
       <Transition
         appear={true}
         show={inView}
-        enter="transition-all duration-1000"
-        enterFrom="opacity-0 translate-x-[-100%]"
+        enter="transition-[opacity,transform] duration-1000"
+        enterFrom="opacity-0 -translate-x-full"
         enterTo="opacity-100 translate-x-0"
         className="w-min"
       >
