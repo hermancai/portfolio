@@ -52,11 +52,9 @@ export default function Home() {
         entryList={[heroEntry, aboutEntry, projectsEntry, contactEntry]}
       />
       <Hero heroRef={heroRef} aboutEntry={aboutEntry} />
-      <span className="w-full h-[1px] bg-gray-900 bottom-0"></span>
       <About aboutRef={aboutRef} contactEntry={contactEntry} />
       <Projects projectsRef={projectsRef} />
       <Contact contactRef={contactRef} />
-      <span className="w-full h-[1px] bg-red-900 bottom-0"></span>
       <Footer />
     </div>
   );

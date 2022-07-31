@@ -67,6 +67,7 @@ function Hero({ heroRef, aboutEntry }) {
           </div>
         </Transition>
       </div>
+      <span className="block w-full h-[0.5px] bg-gray-900" />
     </div>
   );
 }
