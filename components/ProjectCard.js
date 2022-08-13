@@ -6,7 +6,9 @@ const ProjectCard = ({ data }) => {
     <div className="bg-gray-900 rounded w-full p-8 gap-5 grid grid-cols-1 md:grid-cols-2">
       <div className="flex flex-col gap-5 max-w-max">
         <p className="font-bold text-2xl">{data.name}</p>
-        <p className="italic text-gray-400">{data.description}</p>
+        <p className="italic text-gray-400 whitespace-pre-line">
+          {data.description}
+        </p>
         <div className="flex flex-wrap gap-2">
           {data.tech.map((entry, i) => {
             return (
