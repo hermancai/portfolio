@@ -40,7 +40,7 @@ const ppmProject = {
 const eqmapperProject = {
   name: "Earthquake Mapper",
   description:
-    "Visualize past earthquake events on a map, based on customizable search terms.",
+    "!!! NOTE !!! I am rebuilding this app with React and Typescript.\nWork in Progress: https://eqmap-silk.vercel.app\n\nVisualize past earthquake events on a map, based on customizable search terms.",
   tech: ["HTML", "CSS", "Javascript"],
   liveLink: "https://hermancai.github.io/earthquake_mapper/",
   githubLink: "https://github.com/hermancai/earthquake_mapper",
@@ -95,8 +95,8 @@ const Projects = ({ projectsRef }) => {
           <p className="sectionLabel">Projects</p>
         </TransitionSlideIn>
         <div ref={projectsHeaderRef} />
-        <ProjectCard data={ppmProject} />
         <ProjectCard data={eqmapperProject} />
+        <ProjectCard data={ppmProject} />
         <ProjectCard data={chatappProject} />
         <ProjectCard data={weatherProject} />
       </div>
