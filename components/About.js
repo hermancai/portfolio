@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 import TransitionSlideIn from "./TransitionSlideIn";
 import ContactIcons from "./ContactIcons";
 
-const skills1 = ["Javascript", "HTML", "CSS", "Python", "C"];
+const skills1 = ["Javascript", "Typescript", "HTML", "CSS", "Python", "C"];
 const skills2 = [
   "React",
   "Redux",
