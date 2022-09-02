@@ -40,10 +40,10 @@ const ppmProject = {
 const eqmapperProject = {
   name: "Earthquake Mapper",
   description:
-    "!!! NOTE !!! I am rebuilding this app with React and Typescript.\nWork in Progress: https://eqmap-silk.vercel.app\n\nVisualize past earthquake events on a map, based on customizable search terms.",
-  tech: ["HTML", "CSS", "Javascript"],
-  liveLink: "https://hermancai.github.io/earthquake_mapper/",
-  githubLink: "https://github.com/hermancai/earthquake_mapper",
+    "Visualize past earthquake events on a map, using data from the U.S. Geological Survey.",
+  tech: ["Typescript", "React", "Tailwind CSS"],
+  liveLink: "https://eqmap-silk.vercel.app",
+  githubLink: "https://github.com/hermancai/eqmap_react",
   embla: {
     slides: Array.from(Array(eqmapperImagesCount).keys()),
     imageFunc: eqmapperImagesByIndex,
