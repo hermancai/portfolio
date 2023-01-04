@@ -15,6 +15,27 @@ import {
   weatherImagesCount,
   weatherImagesByIndex,
 } from "../public/images/weather";
+import { notesImagesByIndex, notesImagesCount } from "../public/images/notes";
+
+const notesProject = {
+  name: "Notes and Image Storage",
+  description: "Store text and image files remotely.",
+  tech: [
+    "AWS (S3, Lambda, RDS)",
+    "React",
+    "Redux Toolkit",
+    "Material UI",
+    "Node",
+    "Express",
+  ],
+  liveLink: "https://note-storage.onrender.com",
+  githubLink: "https://github.com/hermancai/notes",
+  embla: {
+    slides: Array.from(Array(notesImagesCount).keys()),
+    imageFunc: notesImagesByIndex,
+    projectName: "notes",
+  },
+};
 
 const ppmProject = {
   name: "Personal Project Manager",
@@ -28,7 +49,7 @@ const ppmProject = {
     "Express",
     "MongoDB",
   ],
-  liveLink: "https://mern-ppm.herokuapp.com",
+  liveLink: "",
   githubLink: "https://github.com/hermancai/project_manager",
   embla: {
     slides: Array.from(Array(ppmImagesCount).keys()),
@@ -95,6 +116,7 @@ const Projects = ({ projectsRef }) => {
           <p className="sectionLabel">Projects</p>
         </TransitionSlideIn>
         <div ref={projectsHeaderRef} />
+        <ProjectCard data={notesProject} />
         <ProjectCard data={eqmapperProject} />
         <ProjectCard data={ppmProject} />
         <ProjectCard data={chatappProject} />

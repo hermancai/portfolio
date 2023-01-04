@@ -22,15 +22,18 @@ const ProjectCard = ({ data }) => {
           })}
         </div>
         <div className="flex flex-wrap gap-4">
-          <a
-            className="linkButton fillButton"
-            href={data.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <DesktopComputerIcon className="h-4 mr-2" />
-            Live Project
-          </a>
+          {data.liveLink === "" ? null : (
+            <a
+              className="linkButton fillButton"
+              href={data.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DesktopComputerIcon className="h-4 mr-2" />
+              Live Project
+            </a>
+          )}
+
           <a
             className="linkButton outlineButton"
             href={data.githubLink}

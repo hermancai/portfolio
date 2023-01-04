@@ -53,10 +53,11 @@ function About({ aboutRef, contactEntry }) {
             className="bg-gray-900 p-8 rounded flex-1 leading-loose text-gray-100"
           >
             <p>
-              My name is <span className="text-red-500">Herman Cai</span>. I am
-              a full stack developer currently building with React and Node. I
-              believe there is always more to learn, so I constantly strive to
-              develop new skills and improve my work. Please feel free to{" "}
+              My name is <span className="text-red-500">Herman Cai</span>. I'm a
+              new grad with degrees in Computer Science and Earth Science. I've
+              been building projects using React and Node for about 2 years, and
+              I am looking to begin a career in web development. Please feel
+              free to{" "}
               <span
                 className="underline text-red-500 cursor-pointer"
                 onClick={() => {
@@ -65,7 +66,7 @@ function About({ aboutRef, contactEntry }) {
               >
                 contact me
               </span>{" "}
-              for any opportunities or inquiries.
+              regarding any opportunities or inquiries.
             </p>
             <div className="float-right mt-5">
               <ContactIcons />

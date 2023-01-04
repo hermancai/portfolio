@@ -37,7 +37,7 @@ function Hero({ heroRef, aboutEntry }) {
           className="flex flex-col space-y-3"
         >
           <p className="text-red-500">Hi, my name is</p>
-          <p className="text-3xl">Herman Cai</p>
+          <p className="text-3xl">Herman Cai.</p>
         </Transition>
         <Transition
           appear={true}
@@ -46,7 +46,10 @@ function Hero({ heroRef, aboutEntry }) {
           enterFrom="opacity-0"
           enterTo="opacity-100"
         >
-          <p className="text-3xl text-gray-400">I am a web developer.</p>
+          <p className="text-xl text-gray-400 max-w-[20rem]">
+            I'm looking for my first opportunity in{" "}
+            <span className="text-white">web development</span>.
+          </p>
         </Transition>
 
         <Transition
