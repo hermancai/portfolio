@@ -47,7 +47,7 @@ function Hero({ heroRef, aboutEntry }) {
           enterTo="opacity-100"
         >
           <p className="text-xl text-gray-400 max-w-[20rem]">
-            I'm looking for my first opportunity in{" "}
+            {`I'm looking for my first opportunity in `}
             <span className="text-white">web development</span>.
           </p>
         </Transition>
