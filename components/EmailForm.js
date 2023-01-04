@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import Toast from "./Toast";
-import { CogIcon } from "@heroicons/react/solid";
 
 function EmailForm() {
   const [activeButton, setActiveButton] = useState(true);
@@ -31,11 +30,21 @@ function EmailForm() {
       .then((result) => {
         if (result.status === 200) {
           console.log("Your email has been sent.");
-          createToast(<Toast message="Your message has been sent." bgColor="bg-green-500" key={Date.now()} />);
+          createToast(
+            <Toast
+              message="Your message has been sent."
+              bgColor="bg-green-500"
+              key={Date.now()}
+            />
+          );
         } else {
           console.log("Email sending error");
           createToast(
-            <Toast message="Your message cannot be sent at this time." bgColor="bg-red-500" key={Date.now()} />
+            <Toast
+              message="Your message cannot be sent at this time."
+              bgColor="bg-red-500"
+              key={Date.now()}
+            />
           );
         }
         setActiveButton(true);
@@ -59,7 +68,11 @@ function EmailForm() {
           />
 
           {errors.name ? (
-            <>{errors.name.type === "required" && <p className="errorMessage">{errors.name.message}</p>}</>
+            <>
+              {errors.name.type === "required" && (
+                <p className="errorMessage">{errors.name.message}</p>
+              )}
+            </>
           ) : null}
         </div>
 
@@ -79,8 +92,12 @@ function EmailForm() {
           />
           {errors.email ? (
             <>
-              {errors.email.type === "required" && <p className="errorMessage">{errors.email.message}</p>}
-              {errors.email.type === "pattern" && <p className="errorMessage">{errors.email.message}</p>}
+              {errors.email.type === "required" && (
+                <p className="errorMessage">{errors.email.message}</p>
+              )}
+              {errors.email.type === "pattern" && (
+                <p className="errorMessage">{errors.email.message}</p>
+              )}
             </>
           ) : null}
         </div>
@@ -95,7 +112,11 @@ function EmailForm() {
             rows="5"
           />
           {errors.message ? (
-            <>{errors.message.type === "required" && <p className="errorMessage">{errors.message.message}</p>}</>
+            <>
+              {errors.message.type === "required" && (
+                <p className="errorMessage">{errors.message.message}</p>
+              )}
+            </>
           ) : null}
         </div>
 
@@ -107,11 +128,13 @@ function EmailForm() {
           {activeButton ? (
             <p className="font-semibold">Send</p>
           ) : (
-            <CogIcon className="h-5 text-gray-300 animate-customSpin" />
+            <div className="h-5 w-5 border-t-transparent rounded-full border-2 border-gray-300 animate-spin" />
           )}
         </button>
       </form>
-      <div className="flex flex-col fixed bottom-4 left-4 z-10">{toasts.map((entry) => entry)}</div>
+      <div className="flex flex-col fixed bottom-4 left-4 z-10">
+        {toasts.map((entry) => entry)}
+      </div>
     </div>
   );
 }
