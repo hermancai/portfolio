@@ -1,8 +1,15 @@
+import React from "react";
 import Head from "next/head";
 import Hero from "../components/Hero";
 import About from "../components/About";
 
 export default function Home() {
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -11,7 +18,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="max-w-[2000px]">
         <Hero />
         <About />
       </main>
