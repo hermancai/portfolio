@@ -9,7 +9,7 @@ export default function ParticleCanvas() {
   }, []);
 
   return (
-    <div className="h-full w-full absolute top-0 left-0 z-20">
+    <div className="h-full w-full absolute top-0 left-0">
       <Particles
         id="tsparticles"
         init={particlesInit}

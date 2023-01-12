@@ -3,6 +3,8 @@ import Head from "next/head";
 import Hero from "../components/Hero";
 import About from "../components/About";
 
+// All components after hero need z-20 to hide fixed header
+
 export default function Home() {
   React.useEffect(() => {
     if (typeof window !== "undefined") {
@@ -18,7 +20,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-[2000px]">
+      <main>
         <Hero />
         <About />
       </main>
