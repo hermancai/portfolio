@@ -27,7 +27,7 @@ export default function Hero() {
         </p>
         <p className="leading-8">
           <span className="sm:text-lg">
-            I'm looking to start my career as a
+            I&apos;m looking to start my career as a
           </span>
           <br />
           <span className="text-3xl sm:text-4xl">web developer</span>

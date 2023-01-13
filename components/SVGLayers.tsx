@@ -12,7 +12,7 @@ export default function SVGLayers() {
   const y5 = useParallax(scrollYProgress, 200);
 
   return (
-    <div className="w-full h-full absolute bottom-0 overflow-hidden">
+    <div className="w-full h-full absolute bottom-[-1px] overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: "60%" }}
         animate={{ opacity: 1, y: "0%" }}
