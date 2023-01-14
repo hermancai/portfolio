@@ -5,10 +5,10 @@ import { Element } from "react-scroll";
 
 const strokeVariants: AnimationProps["variants"] = {
   hidden: {
-    pathLength: 0,
+    width: 0,
   },
   visible: {
-    pathLength: 1,
+    width: "100%",
     transition: { duration: 1.25, ease: "easeInOut" },
   },
 };
@@ -20,7 +20,6 @@ const fillVariants: AnimationProps["variants"] = {
   visible: {
     opacity: 1,
     transition: { duration: 0.5, delay: 1 },
-    repeatCount: 0,
   },
 };
 
@@ -30,55 +29,34 @@ export default function About() {
 
   return (
     <Element
-      className="min-h-screen w-full flex justify-center items-center text-white flex-col bg-slate-800 relative z-20"
+      className="h-screen w-full relative z-20 bg-slate-800 flex flex-col justify-center items-center"
       name="about"
     >
-      <div className="w-full h-full absolute top-0 pointer-events-none z-10 overflow-hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 200 200"
-          width="100%"
-          height="100%"
-          preserveAspectRatio="none"
-        >
-          <motion.path
-            d="M 100,45 L 0,65"
-            stroke="#0F172A"
+      <span className="h-[50%] w-full top-[25%] block absolute -skew-y-6 z-20">
+        <motion.span
+          className="h-full w-full bg-slate-900 block absolute"
+          initial="hidden"
+          animate={isInView ? "visible" : ""}
+          variants={fillVariants}
+        />
+        <div className="w-full flex justify-center">
+          <motion.span
+            className="h-1 bg-slate-900 absolute"
+            initial="hidden"
+            animate={isInView ? "visible" : ""}
             variants={strokeVariants}
+          />
+        </div>
+        <div className="w-full flex justify-center absolute bottom-0">
+          <motion.span
+            className="h-1 bg-slate-900 absolute"
             initial="hidden"
             animate={isInView ? "visible" : ""}
-          />
-          <motion.path
-            d="M 100,45 L 200,25"
-            stroke="#0F172A"
             variants={strokeVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : ""}
           />
-          <motion.path
-            d="M 100,155 L 0,175"
-            stroke="#0F172A"
-            variants={strokeVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : ""}
-          />
-          <motion.path
-            d="M 100,155 L 200,135"
-            stroke="#0F172A"
-            variants={strokeVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : ""}
-          />
-          <motion.polygon
-            points="0,65 0,175 200,135 200,25"
-            fill="#0F172A"
-            variants={fillVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : ""}
-          />
-        </svg>
-      </div>
-      <div className="p-8 w-full sm:max-w-[30rem] leading-8 flex flex-col gap-8 z-20">
+        </div>
+      </span>
+      <div className="p-8 sm:max-w-[30rem] leading-8 text-white flex flex-col gap-8 z-30">
         <p ref={ref}>
           &emsp;&emsp;My name is{" "}
           <span className="text-orange-400">Herman Cai</span>. I&apos;m a new
