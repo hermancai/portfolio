@@ -6,6 +6,10 @@
    
 }
 
+#tsparticles {
+  height: 100%;
+}
+
 /* For Firefox */
 html {
   scrollbar-color: gray rgb(15, 23, 42);

@@ -9,7 +9,7 @@ export default function ParticleCanvas() {
   }, []);
 
   return (
-    <div className="h-full w-full absolute top-0 left-0">
+    <div className="h-screen w-full absolute top-0 left-0">
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -75,6 +75,7 @@ export default function ParticleCanvas() {
               },
             },
           },
+          fullScreen: { enable: false },
         }}
       />
     </div>
