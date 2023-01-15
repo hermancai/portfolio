@@ -25,7 +25,7 @@ export default function SkillIcon({
 }: Props) {
   return (
     <motion.div
-      className="relative h-24 w-24 p-1 flex justify-center items-center cursor-pointer rounded-full hover:shadow-[0_0_0_3px_rgb(249,115,22,0.6)] transition-shadow duration-300"
+      className="relative h-24 w-24 p-2 flex justify-center items-center cursor-pointer bg-slate-900 rounded-full hover:shadow-[0_0_0_3px_rgb(249,115,22)] transition-shadow duration-300"
       style={{ perspective: "1000px" }}
       onClick={handleClick}
       variants={variants}

@@ -54,7 +54,7 @@ export default function Skills() {
         onClick={toggleShowText}
       >
         <motion.span
-          className="absolute top-0 h-full w-1/2 border-2 border-orange-400 rounded"
+          className="absolute top-0 h-full w-1/2 border-[3px] border-orange-400 rounded"
           animate={{
             left: showText ? "50%" : "0",
             transition: { duration: 0.5, ease: "easeInOut" },
