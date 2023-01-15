@@ -2,8 +2,9 @@ import React from "react";
 import Head from "next/head";
 import Hero from "../components/Hero";
 import About from "../components/About";
+import Skills from "../components/Skills";
 
-// All components after hero need z-20 to hide fixed header
+// All components after hero need relative and z-20 to hide fixed header
 
 export default function Home() {
   React.useEffect(() => {
@@ -23,6 +24,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Skills />
       </main>
     </>
   );

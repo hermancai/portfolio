@@ -29,7 +29,7 @@ export default function About() {
 
   return (
     <Element
-      className="h-screen w-full relative z-20 bg-slate-800 flex flex-col justify-center items-center"
+      className="h-screen min-h-[40rem] w-full relative z-20 bg-slate-800 flex flex-col justify-center items-center"
       name="about"
     >
       <span className="h-[50%] w-full top-[25%] block absolute -skew-y-6 z-20">
@@ -56,8 +56,11 @@ export default function About() {
           />
         </div>
       </span>
-      <div className="p-8 sm:max-w-[30rem] leading-8 text-white flex flex-col gap-8 z-30">
-        <p ref={ref}>
+      <div
+        className="p-8 sm:max-w-[30rem] leading-8 text-white flex flex-col gap-4 z-30"
+        ref={ref}
+      >
+        <p>
           &emsp;&emsp;My name is{" "}
           <span className="text-orange-400">Herman Cai</span>. I&apos;m a new
           grad with degrees in Computer Science and Earth Science. I&apos;ve
@@ -75,26 +78,27 @@ export default function About() {
             href="https://github.com/hermancai"
             target="_blank"
             rel="noopener noreferrer"
+            className="rounded-full p-2 hover:shadow-[0_0_0_3px_rgb(249,115,22,0.7)] transition-shadow duration-300"
           >
             <Image
               src="/icons/github.png"
               alt="github logo"
               width={30}
               height={30}
-              className="hover:scale-110"
             />
           </a>
+
           <a
             href="https://www.linkedin.com/in/hermancai/"
             target="_blank"
             rel="noopener noreferrer"
+            className="rounded-full p-2 hover:shadow-[0_0_0_3px_rgb(249,115,22,0.7)] transition-shadow duration-300"
           >
             <Image
               src="/icons/linkedin.png"
               alt="linkedin logo"
               width={30}
               height={30}
-              className="hover:scale-110"
             />
           </a>
         </div>
