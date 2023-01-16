@@ -3,6 +3,7 @@ import { AnimationProps, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { Element } from "react-scroll";
 
+// For background
 const strokeVariants: AnimationProps["variants"] = {
   hidden: {
     width: 0,
@@ -13,6 +14,7 @@ const strokeVariants: AnimationProps["variants"] = {
   },
 };
 
+// For background
 const fillVariants: AnimationProps["variants"] = {
   hidden: {
     opacity: 0,
