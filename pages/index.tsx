@@ -3,6 +3,7 @@ import Head from "next/head";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Skills from "../components/Skills";
+import Projects from "../components/Projects";
 
 // All components after hero need relative and z-20 to hide fixed header
 
@@ -25,6 +26,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
+        <Projects />
       </main>
     </>
   );
