@@ -141,6 +141,7 @@ export default function Skills() {
             {skillList.map((skill, i) => {
               return (
                 <SkillIcon
+                  index={i}
                   name={skill.name}
                   path={skill.path}
                   showText={iconState[i]}

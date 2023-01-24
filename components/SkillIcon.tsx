@@ -1,10 +1,12 @@
 import { motion, AnimationProps } from "framer-motion";
 import Image from "next/image";
+import React from "react";
 
 interface Props {
   name: string;
   path: string;
   showText: boolean;
+  index: number;
   handleClick: () => void;
 }
 
@@ -21,13 +23,27 @@ export default function SkillIcon({
   name,
   path,
   showText,
+  index,
   handleClick,
 }: Props) {
+  const [delay, setDelay] = React.useState(0);
+
+  // Add stagger effect when all icons should flip
+  React.useEffect(() => {
+    setDelay(index * 0.05);
+  }, [showText]);
+
+  // Remove delay when only flipping self
+  const flipSelf = () => {
+    setDelay(0);
+    handleClick();
+  };
+
   return (
     <motion.div
       className="relative h-20 w-20 flex justify-center items-center cursor-pointer rounded-full"
-      style={{ perspective: "1000px" }}
-      onClick={handleClick}
+      style={{ perspective: "120px" }}
+      onClick={flipSelf}
       variants={variants}
     >
       <motion.div
@@ -35,7 +51,7 @@ export default function SkillIcon({
         style={{ transformStyle: "preserve-3d" }}
         animate={{
           rotateY: showText ? "180deg" : "0deg",
-          transition: { duration: 0.8 },
+          transition: { duration: 0.8, delay: delay },
         }}
       >
         <motion.div
