@@ -1,6 +1,8 @@
 import React from "react";
 import SkillIcon from "./SkillIcon";
+import { Element } from "react-scroll";
 import { AnimationProps, motion, useInView } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 
 const skillList = [
   { name: "HTML", path: "/icons/html.png" },
@@ -9,7 +11,7 @@ const skillList = [
   { name: "TypeScript", path: "/icons/typescript.png" },
   { name: "React", path: "/icons/react.png" },
   { name: "Redux", path: "/icons/redux.png" },
-  { name: "tailwindcss", path: "/icons/tailwindcss.png" },
+  { name: "Tailwind", path: "/icons/tailwindcss.png" },
   { name: "Python", path: "/icons/python.png" },
   { name: "Node.js", path: "/icons/node.png" },
   { name: "Express", path: "/icons/express.png" },
@@ -51,7 +53,7 @@ const fillVariants: AnimationProps["variants"] = {
 
 export default function Skills() {
   const ref = React.useRef(null);
-  const isInView = useInView(ref);
+  const inView = useInView(ref);
 
   const [iconState, setIconState] = React.useState(skillList.map(() => false));
   const [showText, setShowText] = React.useState(false);
@@ -70,79 +72,86 @@ export default function Skills() {
   };
 
   return (
-    <div className="h-screen min-h-[40rem] w-full flex flex-col gap-8 bg-slate-800 justify-center items-center text-white relative z-20">
-      <span className="h-[50%] w-full top-[25%] block absolute skew-y-6 z-20">
-        <motion.span
-          className="h-full w-full bg-slate-700 block absolute"
-          initial="hidden"
-          animate={isInView ? "visible" : ""}
-          variants={fillVariants}
-        />
-        <div className="w-full flex justify-center">
+    <Element name="skills" className="pt-8 pb-24 bg-slate-800">
+      <div className="w-full flex justify-center relative">
+        <span className="h-[80%] w-full top-[10%] absolute skew-y-6">
+          <div className="w-full flex justify-center absolute top-0">
+            <motion.span
+              className="h-1 bg-gray-700 absolute"
+              initial="hidden"
+              animate={inView ? "visible" : ""}
+              variants={strokeVariants}
+            />
+          </div>
+          <div className="w-full flex justify-center absolute bottom-0">
+            <motion.span
+              className="h-1 bg-gray-700 absolute"
+              initial="hidden"
+              animate={inView ? "visible" : ""}
+              variants={strokeVariants}
+            />
+          </div>
           <motion.span
-            className="h-1 bg-slate-700 absolute"
+            className="h-full w-full block absolute bg-gradient-to-b from-gray-700 to-gray-700 via-slate-700"
             initial="hidden"
-            animate={isInView ? "visible" : ""}
-            variants={strokeVariants}
+            animate={inView ? "visible" : ""}
+            variants={fillVariants}
           />
-        </div>
-        <div className="w-full flex justify-center absolute bottom-0">
-          <motion.span
-            className="h-1 bg-slate-700 absolute"
+        </span>
+        <div className="w-full relative flex flex-col justify-center items-center gap-8 text-white ">
+          <SectionHeader text="Skills" />
+          <motion.div
+            className="flex flex-row flex-nowrap relative rounded bg-slate-900 cursor-pointer shadow-[0_0_2px_black] hover:shadow-[0_0_1px_white] transition-[box-shadow] duration-300"
+            onClick={toggleShowText}
+            animate={
+              inView
+                ? { opacity: 1, transition: { duration: 1, delay: 0.5 } }
+                : { opacity: 0 }
+            }
+          >
+            <motion.span
+              className="absolute top-0 h-full w-1/2 border-[3px] border-orange-400 rounded"
+              animate={{
+                left: showText ? "50%" : "0",
+                transition: { duration: 0.5, ease: "easeInOut" },
+              }}
+            />
+            <p
+              className={`px-4 py-1 rounded bg-slate-900 font-mono transition-colors duration-500 ${
+                showText ? "text-gray-500" : ""
+              }`}
+            >
+              Icon
+            </p>
+            <p
+              className={`px-4 py-1 rounded bg-slate-900 font-mono transition-colors duration-500 ${
+                showText ? "" : "text-gray-500"
+              }`}
+            >
+              Text
+            </p>
+          </motion.div>
+          <motion.div
+            className="w-full max-w-[32rem] gap-6 flex flex-wrap justify-center px-4"
             initial="hidden"
-            animate={isInView ? "visible" : ""}
-            variants={strokeVariants}
-          />
-        </div>
-      </span>
-      <div className="w-full h-full relative flex flex-col justify-center items-center gap-8 z-20">
-        <h1 className="text-3xl">- Skills -</h1>
-        <div
-          className="flex flex-row flex-nowrap relative rounded bg-slate-900 cursor-pointer shadow-[0_0_1px_white] hover:shadow-[0_0_2px_white]"
-          onClick={toggleShowText}
-        >
-          <motion.span
-            className="absolute top-0 h-full w-1/2 border-[3px] border-orange-400 rounded"
-            animate={{
-              left: showText ? "50%" : "0",
-              transition: { duration: 0.5, ease: "easeInOut" },
-            }}
-          />
-          <p
-            className={`px-4 py-1 rounded bg-slate-900 font-mono transition-colors duration-500 ${
-              showText ? "text-gray-500" : ""
-            }`}
+            animate={inView ? "show" : ""}
+            variants={container}
+            ref={ref}
           >
-            Icon
-          </p>
-          <p
-            className={`px-4 py-1 rounded bg-slate-900 font-mono transition-colors duration-500 ${
-              showText ? "" : "text-gray-500"
-            }`}
-          >
-            Text
-          </p>
+            {skillList.map((skill, i) => {
+              return (
+                <SkillIcon
+                  name={skill.name}
+                  path={skill.path}
+                  showText={iconState[i]}
+                  handleClick={() => handleClick(i)}
+                  key={i}
+                />
+              );
+            })}
+          </motion.div>
         </div>
-        <motion.div
-          className="w-full max-w-[32rem] grid gap-4 px-4 grid-cols-[repeat(auto-fill,minmax(6rem,1fr))] justify-items-center"
-          initial="hidden"
-          animate={isInView ? "show" : ""}
-          variants={container}
-          ref={ref}
-        >
-          {skillList.map((skill, i) => {
-            return (
-              <SkillIcon
-                name={skill.name}
-                path={skill.path}
-                showText={iconState[i]}
-                handleClick={() => handleClick(i)}
-                key={i}
-              />
-            );
-          })}
-        </motion.div>
       </div>
-    </div>
+    </Element>
   );
 }

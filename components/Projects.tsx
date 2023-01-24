@@ -1,6 +1,8 @@
 import React from "react";
 import ProjectCard, { CardContent } from "./ProjectCard";
+import { Element } from "react-scroll";
 import { motion, AnimationProps, useInView } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 
 const cardList: CardContent[] = [
   {
@@ -71,7 +73,7 @@ export default function Projects() {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const cardRefs = React.useRef<(HTMLDivElement | null)[]>(new Array());
   const [selectedCard, setSelectedCard] = React.useState(0);
-  const inView = useInView(containerRef, { once: true });
+  const inView = useInView(containerRef);
 
   // Move first project card into center of viewport
   React.useEffect(() => {
@@ -84,8 +86,9 @@ export default function Projects() {
     if (!containerRef.current || !cardRefs.current[card]) return;
 
     // Scrollbar width interferes with viewport center
-    const scrollOffset =
-      (window.innerWidth - document.documentElement.clientWidth) / 2;
+    const scrollOffset = Math.floor(
+      (window.innerWidth - document.documentElement.clientWidth) / 2
+    );
 
     // Center of selected card
     containerRef.current.scrollLeft =
@@ -94,53 +97,59 @@ export default function Projects() {
   };
 
   return (
-    <div className="w-full flex flex-col gap-8 py-8 justify-center items-center bg-slate-800 text-white relative z-20">
-      <p className="text-3xl">- Projects -</p>
-      <div className="max-w-full w-full relative overflow-hidden">
-        <div className="absolute bottom-[5%] w-full h-[90%]">
-          <motion.span
-            className="absolute h-1 bg-slate-900 top-0 left-0"
-            animate={inView ? "show" : "hidden"}
-            variants={strokeVariants}
-          />
-          <motion.span
-            className="absolute h-1 bg-slate-900 bottom-0 right-0"
-            animate={inView ? "show" : "hidden"}
-            variants={strokeVariants}
-          />
-          <motion.span
-            className="absolute w-full h-full top-0 bg-gradient-to-b from-slate-900 to-slate-900 via-slate-900/70"
-            animate={inView ? "show" : "hidden"}
-            variants={fillVariants}
-          />
-        </div>
-        <div
-          ref={containerRef}
-          className="grid grid-flow-col overflow-y-hidden overflow-x-scroll no-scrollbar scroll-smooth px-[50vw]"
-        >
-          {cardList.map((card, i) => (
+    <Element name="projects" className="pt-8 pb-24 bg-slate-800">
+      <div className="w-full flex flex-col gap-8 justify-center items-center text-white relative">
+        <SectionHeader text="Projects" />
+        <div className="flex flex-row flex-nowrap gap-8">
+          {cardList.map((_, i) => (
             <div
+              className={`w-5 h-5 rounded-full cursor-pointer transition-colors border-2 border-gray-900 duration-300 ${
+                i === selectedCard ? "bg-orange-400" : "bg-slate-600"
+              }`}
               key={i}
-              ref={(el) => cardRefs.current.push(el)}
               onClick={() => scrollToCard(i)}
-              className="relative inline-block"
-            >
-              <ProjectCard index={i} selectedCard={selectedCard} card={card} />
-            </div>
+            />
           ))}
         </div>
-      </div>
-      <div className="flex flex-row flex-nowrap gap-8">
-        {cardList.map((_, i) => (
+        <div className="max-w-full w-full relative overflow-hidden">
+          <div className="absolute bottom-[5%] w-full h-[90%]">
+            <motion.span
+              className="absolute h-1 bg-gray-900 top-0 left-0"
+              animate={inView ? "show" : "hidden"}
+              variants={strokeVariants}
+            />
+            <motion.span
+              className="absolute h-1 bg-gray-900 bottom-0 right-0"
+              animate={inView ? "show" : "hidden"}
+              variants={strokeVariants}
+            />
+            <motion.span
+              className="absolute w-full h-full top-0 bg-gradient-to-b from-gray-900 to-gray-900 via-slate-900"
+              animate={inView ? "show" : "hidden"}
+              variants={fillVariants}
+            />
+          </div>
           <div
-            className={`w-5 h-5 rounded-full cursor-pointer transition-colors duration-300 shadow ${
-              i === selectedCard ? "bg-orange-500" : "bg-slate-600"
-            }`}
-            key={i}
-            onClick={() => scrollToCard(i)}
-          />
-        ))}
+            ref={containerRef}
+            className="grid grid-flow-col overflow-y-hidden overflow-x-scroll no-scrollbar scroll-smooth px-[50vw]"
+          >
+            {cardList.map((card, i) => (
+              <div
+                key={i}
+                ref={(el) => cardRefs.current.push(el)}
+                onClick={() => scrollToCard(i)}
+                className="relative"
+              >
+                <ProjectCard
+                  index={i}
+                  selectedCard={selectedCard}
+                  card={card}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </Element>
   );
 }

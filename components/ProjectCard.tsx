@@ -11,6 +11,11 @@ import {
 const widthFR = "94%";
 const topOffset = "4.5%";
 
+// Firefox has lots of sub-pixel rendering/shifting issues on elements with transitions.
+//     Depends on client screen resolution.
+
+// Small rotation applied to cards -> smoother transitions on firefox.
+
 const cardVariants: AnimationProps["variants"] = {
   selected: {
     opacity: 1,
@@ -20,7 +25,7 @@ const cardVariants: AnimationProps["variants"] = {
   },
   notSelected: (i) => ({
     scale: 1 - Math.abs(i * 0.15),
-    rotateY: i * -10,
+    rotateY: 0.0001,
     opacity: 1 - Math.abs(i * 0.45),
     zIndex: 40 - Math.abs(i),
     x: i ? i * 85 : 0,
@@ -46,11 +51,11 @@ interface CardProps {
 
 export default function ProjectCard({ index, selectedCard, card }: CardProps) {
   const ref = React.useRef(null);
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref);
 
   return (
     <motion.div
-      className="bg-slate-900 w-[85vw] sm:w-[400px] h-full rounded border-2 border-slate-600 relative shadow"
+      className="bg-slate-900 w-[85vw] sm:w-[400px] h-full rounded border-2 border-slate-600 relative"
       ref={ref}
       variants={cardVariants}
       animate={selectedCard === index ? "selected" : "notSelected"}

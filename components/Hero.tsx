@@ -16,7 +16,7 @@ export default function Hero() {
         transition={{
           duration: 1,
         }}
-        className="flex flex-col fixed gap-3 sm:gap-6 items-center text-center p-6 pt-[25vh] z-20 "
+        className="flex flex-col gap-3 sm:gap-6 items-center text-center p-6 pt-[25vh] z-20 "
       >
         <p className="leading-8">
           <span className="sm:text-lg">Hello, my name is</span>

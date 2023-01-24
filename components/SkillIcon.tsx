@@ -25,7 +25,7 @@ export default function SkillIcon({
 }: Props) {
   return (
     <motion.div
-      className="relative h-24 w-24 p-2 flex justify-center items-center cursor-pointer bg-slate-900 rounded-full hover:shadow-[0_0_0_3px_rgb(249,115,22)] transition-shadow duration-300"
+      className="relative h-20 w-20 flex justify-center items-center cursor-pointer rounded-full"
       style={{ perspective: "1000px" }}
       onClick={handleClick}
       variants={variants}
@@ -39,7 +39,7 @@ export default function SkillIcon({
         }}
       >
         <motion.div
-          className="absolute w-full h-full bg-transparent flex justify-center items-center"
+          className="absolute w-full h-full bg-slate-900 p-4 border-2 border-black hover:border-orange-400 transition-colors duration-300 rounded-full flex justify-center items-center shadow-sm shadow-slate-900"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
@@ -57,7 +57,7 @@ export default function SkillIcon({
           />
         </motion.div>
         <motion.div
-          className="absolute w-full h-full flex justify-center items-center"
+          className="absolute w-full h-full flex justify-center items-center bg-slate-900 p-4 border-2 border-black hover:border-orange-400 transition-colors duration-300 rounded-full shadow-sm shadow-slate-900"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
@@ -66,7 +66,7 @@ export default function SkillIcon({
             transform: "rotateX(0deg)",
           }}
         >
-          <span className="absolute w-3/4 h-3/4 bg-slate-700 border-2 border-slate-900 rotate-45" />
+          <span className="absolute w-1/2 h-1/2 bg-slate-700 rotate-45 border-2 border-black" />
           <p className="relative font-mono">{name}</p>
         </motion.div>
       </motion.div>
