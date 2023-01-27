@@ -1,7 +1,7 @@
 import React from "react";
 import { AnimationProps, motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { Element } from "react-scroll";
+import { Element, scroller } from "react-scroll";
 import SectionHeader from "./SectionHeader";
 
 // For background
@@ -29,6 +29,10 @@ const fillVariants: AnimationProps["variants"] = {
 export default function About() {
   const ref = React.useRef(null);
   const inView = useInView(ref);
+
+  const scrollToContacts = React.useCallback(() => {
+    scroller.scrollTo("contact", { duration: 1500, smooth: true });
+  }, []);
 
   return (
     <Element name="about" className="pt-16 pb-24 bg-slate-800">
@@ -74,7 +78,10 @@ export default function About() {
             <span className="text-orange-400">React and Node</span> for about 2
             years, and I am looking to begin a career in web development. Please
             feel free to{" "}
-            <span className="underline text-orange-400 cursor-pointer">
+            <span
+              className="underline text-orange-400 cursor-pointer"
+              onClick={scrollToContacts}
+            >
               contact me
             </span>{" "}
             regarding any inquiries or opportunities.
