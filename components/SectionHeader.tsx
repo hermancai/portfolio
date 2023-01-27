@@ -19,7 +19,7 @@ export default function SectionHeader({ text }: { text: string }) {
         animate={
           inView
             ? { opacity: 1, y: "0%", transition: { duration: 1 } }
-            : { opacity: 0, y: "50%" }
+            : { opacity: 0, y: "50%", transition: { duration: 0 } }
         }
         className="text-white inline-block"
       >

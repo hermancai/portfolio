@@ -1,15 +1,17 @@
 import ParticleCanvas from "./ParticleCanvas";
 import { motion } from "framer-motion";
 import SVGLayers from "./SVGLayers";
-import { scroller } from "react-scroll";
+import { Element } from "react-scroll";
+import useScroll from "../hooks/useScroll";
 
 export default function Hero() {
-  const scrollToSection = () => {
-    scroller.scrollTo("about", { duration: 1500, smooth: true });
-  };
+  const scrollToSection = useScroll("About Me", 2000);
 
   return (
-    <div className="w-full h-screen min-h-[650px] flex justify-center text-white bg-gradient-to-b from-zinc-900 to-slate-900 relative overflow-hidden">
+    <Element
+      name="Home"
+      className="w-full h-screen min-h-[650px] flex justify-center text-white bg-gradient-to-b from-zinc-900 to-slate-900 relative overflow-hidden"
+    >
       <motion.div
         initial={{ opacity: 0, y: "-5%" }}
         animate={{ opacity: 1, y: "0%" }}
@@ -48,6 +50,6 @@ export default function Hero() {
       </motion.div>
       <ParticleCanvas />
       <SVGLayers />
-    </div>
+    </Element>
   );
 }

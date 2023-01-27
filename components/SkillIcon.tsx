@@ -31,7 +31,7 @@ export default function SkillIcon({
   // Add stagger effect when all icons should flip
   React.useEffect(() => {
     setDelay(index * 0.05);
-  }, [showText]);
+  }, [showText, index]);
 
   // Remove delay when only flipping self
   const flipSelf = () => {

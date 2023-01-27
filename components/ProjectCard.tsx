@@ -8,8 +8,7 @@ import {
 
 // SVG viewbox: 0 0 340 219
 // Image dimensions: 320 x 180 (16 : 9)
-const widthFR = "94%";
-const topOffset = "4.5%";
+// Hardcoded images with width 94% and top 4.5%
 
 // Firefox has lots of sub-pixel rendering/shifting issues on elements with transitions.
 //     Depends on client screen resolution.
@@ -51,7 +50,7 @@ interface CardProps {
 
 export default function ProjectCard({ index, selectedCard, card }: CardProps) {
   const ref = React.useRef(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true });
 
   return (
     <motion.div
@@ -76,7 +75,7 @@ export default function ProjectCard({ index, selectedCard, card }: CardProps) {
                 ? { opacity: 1, transition: { duration: 0.5, delay: 0.25 } }
                 : { opacity: 0, transition: { duration: 0.5, delay: 0.25 } }
             }
-            className={`absolute w-[${widthFR}] top-[${topOffset}] bg-white aspect-video mx-auto left-0 right-0`}
+            className="absolute w-[94%] top-[4.5%] bg-white aspect-video mx-auto left-0 right-0"
           >
             <Image
               src={card.image}

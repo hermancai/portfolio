@@ -53,7 +53,7 @@ const fillVariants: AnimationProps["variants"] = {
 
 export default function Skills() {
   const ref = React.useRef(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true });
 
   const [iconState, setIconState] = React.useState(skillList.map(() => false));
   const [showText, setShowText] = React.useState(false);
@@ -72,9 +72,9 @@ export default function Skills() {
   };
 
   return (
-    <Element name="skills" className="pt-8 pb-24 bg-slate-800">
+    <Element name="Skills" className="pt-32 bg-slate-800">
       <div className="w-full flex justify-center relative">
-        <span className="h-[80%] w-full top-[10%] absolute skew-y-6">
+        <span className="h-[70%] w-full top-[15%] absolute skew-y-6">
           <div className="w-full flex justify-center absolute top-0">
             <motion.span
               className="h-1 bg-gray-700 absolute"
@@ -110,7 +110,7 @@ export default function Skills() {
             }
           >
             <motion.span
-              className="absolute top-0 h-full w-1/2 border-[3px] border-orange-400 rounded"
+              className="absolute top-0 h-full w-1/2 border-[3px] border-orange-500 rounded"
               animate={{
                 left: showText ? "50%" : "0",
                 transition: { duration: 0.5, ease: "easeInOut" },

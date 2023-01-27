@@ -111,7 +111,7 @@ export default function Contact() {
   };
 
   return (
-    <Element name="contact" className="pt-8 pb-24 bg-slate-800">
+    <Element name="Contact" className="pt-32 pb-32 bg-slate-800">
       <div className="w-full flex flex-col items-center justify-center gap-4 px-4 text-white">
         <SectionHeader text="Contact" />
         <p className="text-center mb-2">
@@ -135,7 +135,7 @@ export default function Contact() {
             <input
               type="text"
               name="name"
-              className="w-full bg-slate-800 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
+              className="w-full bg-zinc-900 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
               onChange={handleOnChange}
               onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
             />
@@ -146,7 +146,7 @@ export default function Contact() {
             <input
               type="text"
               name="email"
-              className="w-full bg-slate-800 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
+              className="w-full bg-zinc-900 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
               onChange={handleOnChange}
               onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
             />
@@ -157,7 +157,7 @@ export default function Contact() {
             <textarea
               spellCheck={false}
               name="message"
-              className="w-full resize-y min-h-[8rem] bg-slate-800 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
+              className="w-full resize-y min-h-[8rem] bg-zinc-900 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
               onChange={handleOnChange}
             />
             <AnimatedText text={errors.message} error={true} />

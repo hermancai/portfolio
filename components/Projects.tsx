@@ -73,7 +73,7 @@ export default function Projects() {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const cardRefs = React.useRef<(HTMLDivElement | null)[]>(new Array());
   const [selectedCard, setSelectedCard] = React.useState(0);
-  const inView = useInView(containerRef);
+  const inView = useInView(containerRef, { once: true });
 
   // Move first project card into center of viewport
   React.useEffect(() => {
@@ -97,8 +97,8 @@ export default function Projects() {
   };
 
   return (
-    <Element name="projects" className="pt-8 pb-24 bg-slate-800">
-      <div className="w-full flex flex-col gap-8 justify-center items-center text-white relative">
+    <Element name="Projects" className="pt-32 bg-slate-800">
+      <div className="w-full flex flex-col gap-6 justify-center items-center text-white relative">
         <SectionHeader text="Projects" />
         <div className="flex flex-row flex-nowrap gap-8">
           {cardList.map((_, i) => (

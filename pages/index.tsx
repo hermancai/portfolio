@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Skills from "../components/Skills";
@@ -19,7 +20,7 @@ export default function Home() {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <title>Herman Cai's Portfolio</title>
+        <title>Herman Cai&apos;s Portfolio</title>
         <meta
           name="description"
           content="Herman Cai Web Development Portfolio"
@@ -49,6 +50,7 @@ export default function Home() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f172a" />
       </Head>
       <main>
+        <Navbar />
         <Hero />
         <About />
         <Skills />

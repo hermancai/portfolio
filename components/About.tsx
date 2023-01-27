@@ -1,8 +1,9 @@
 import React from "react";
 import { AnimationProps, motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { Element, scroller } from "react-scroll";
+import { Element } from "react-scroll";
 import SectionHeader from "./SectionHeader";
+import useScroll from "../hooks/useScroll";
 
 // For background
 const strokeVariants: AnimationProps["variants"] = {
@@ -28,14 +29,12 @@ const fillVariants: AnimationProps["variants"] = {
 
 export default function About() {
   const ref = React.useRef(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true });
 
-  const scrollToContacts = React.useCallback(() => {
-    scroller.scrollTo("contact", { duration: 1500, smooth: true });
-  }, []);
+  const scrollToContacts = useScroll("Contact", 1000);
 
   return (
-    <Element name="about" className="pt-16 pb-24 bg-slate-800">
+    <Element name="About Me" className="pt-32 bg-slate-800">
       <div className="flex justify-center w-full relative" ref={ref}>
         <span className="h-[80%] w-full top-[10%] absolute -skew-y-6">
           <motion.span
