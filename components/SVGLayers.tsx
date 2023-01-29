@@ -1,52 +1,58 @@
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  MotionValue,
+  useScroll,
+  useTransform,
+  AnimationProps,
+} from "framer-motion";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [0, distance]);
 }
 
+const containerVariants: AnimationProps["variants"] = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const layerVariants: AnimationProps["variants"] = {
+  hidden: { y: "5%", opacity: 0 },
+  show: { y: "0%", opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
+};
+
 export default function SVGLayers() {
   const { scrollYProgress } = useScroll();
-  const y2 = useParallax(scrollYProgress, 50);
-  const y3 = useParallax(scrollYProgress, 100);
-  const y4 = useParallax(scrollYProgress, 150);
-  const y5 = useParallax(scrollYProgress, 200);
+  const y2 = useParallax(scrollYProgress, 200);
+  const y3 = useParallax(scrollYProgress, 300);
+  const y4 = useParallax(scrollYProgress, 400);
 
   return (
-    <div className="w-full h-full absolute bottom-[-1px] overflow-hidden">
+    <motion.div
+      className="w-full h-full absolute overflow-hidden"
+      initial="hidden"
+      animate="show"
+      variants={containerVariants}
+    >
+      <motion.div className="bg-[url(/svglayers/1a.png)] absolute w-full h-full bg-repeat-x z-[5] bg-[bottom_left_-10rem] -bottom-[200px]" />
       <motion.div
-        initial={{ opacity: 0, y: "60%" }}
-        animate={{ opacity: 1, y: "0%" }}
-        transition={{ y: { duration: 1.75 }, delay: 0.2, ease: "easeIn" }}
-        className="bg-[url(/svglayers/vlayer5.svg)] sm:bg-[url(/svglayers/hlayer5.svg)] absolute w-full h-full bg-bottom bg-contain bg-no-repeat"
-        style={{ y: y5 }}
-      ></motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: "60%" }}
-        animate={{ opacity: 1, y: "0%" }}
-        transition={{ y: { duration: 1.75 }, ease: "easeIn" }}
-        className="bg-[url(/svglayers/vlayer4.svg)] sm:bg-[url(/svglayers/hlayer4.svg)] absolute w-full h-full bg-bottom bg-contain bg-no-repeat"
-        style={{ y: y4 }}
-      ></motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: "50%" }}
-        animate={{ opacity: 1, y: "0%" }}
-        transition={{ y: { duration: 1.5 }, ease: "easeIn" }}
-        className="bg-[url(/svglayers/vlayer3.svg)] sm:bg-[url(/svglayers/hlayer3.svg)] absolute w-full h-full bg-bottom bg-contain bg-no-repeat pointer-events-none z-20"
-        style={{ y: y3 }}
-      ></motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: "25%" }}
-        animate={{ opacity: 1, y: "0%" }}
-        transition={{ y: { duration: 1 }, delay: 0.25, ease: "easeIn" }}
-        className="bg-[url(/svglayers/vlayer2.svg)] sm:bg-[url(/svglayers/hlayer2.svg)] absolute w-full h-full bg-bottom bg-contain bg-no-repeat pointer-events-none z-20"
+        className="bg-[url(/svglayers/2a.png)] absolute w-full h-full bg-repeat-x z-[4] bg-[bottom_right_1rem] -bottom-[150px]"
         style={{ y: y2 }}
-      ></motion.div>
+        variants={layerVariants}
+      />
       <motion.div
-        initial={{ opacity: 0, y: "25%" }}
-        animate={{ opacity: 1, y: "0%" }}
-        transition={{ y: { duration: 1 }, ease: "easeIn" }}
-        className="bg-[url(/svglayers/vlayer1.svg)] sm:bg-[url(/svglayers/hlayer1.svg)] absolute w-full h-full bg-bottom bg-contain bg-no-repeat pointer-events-none z-20"
-      ></motion.div>
-    </div>
+        className="bg-[url(/svglayers/3a.png)] absolute w-full h-full bg-repeat-x z-[3] bg-[bottom_left_-70rem] -bottom-[200px]"
+        style={{ y: y3 }}
+        variants={layerVariants}
+      />
+      <motion.div
+        className="bg-[url(/svglayers/4a.png)] absolute w-full h-full bg-repeat-x z-[2] bg-[bottom_right_-70rem] bottom-[35px]"
+        style={{ y: y4 }}
+        variants={layerVariants}
+      />
+    </motion.div>
   );
 }

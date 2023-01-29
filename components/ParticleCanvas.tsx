@@ -23,23 +23,13 @@ export default function ParticleCanvas() {
                 enable: true,
                 mode: ["grab", "connect"],
               },
-              onClick: {
-                enable: true,
-                mode: ["repulse"],
-              },
             },
             modes: {
               grab: {
-                distance: 200,
+                distance: 150,
               },
               connect: {
-                radius: 200,
-                links: {
-                  duration: 1000,
-                },
-              },
-              repulse: {
-                duration: 2,
+                radius: 150,
               },
             },
           },
