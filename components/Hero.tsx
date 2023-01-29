@@ -1,6 +1,6 @@
 import ParticleCanvas from "./ParticleCanvas";
 import { motion } from "framer-motion";
-import SVGLayers from "./SVGLayers";
+import HeroBackground from "./HeroBackground";
 import { Element } from "react-scroll";
 import useScroll from "../hooks/useScroll";
 
@@ -18,7 +18,7 @@ export default function Hero() {
         transition={{
           duration: 1,
         }}
-        className="flex flex-col gap-3 sm:gap-6 items-center text-center p-6 pt-[25vh] z-20 "
+        className="flex flex-col items-center text-center p-6 pt-[25vh] z-20 "
       >
         <p className="leading-8">
           <span className="sm:text-lg">Hello, my name is</span>
@@ -43,13 +43,13 @@ export default function Hero() {
             delay: 1,
           }}
           onClick={scrollToSection}
-          className="border border-orange-400 hover:text-black hover:bg-orange-400 active:translate-y-[1px] transition-colors duration-300 px-4 py-2 rounded text-orange-400 mt-3 cursor-pointer"
+          className="border border-orange-400 hover:text-black bg-black hover:bg-orange-400 active:translate-y-[1px] transition-colors duration-300 px-4 py-2 rounded text-orange-400 mt-6 cursor-pointer"
         >
           About Me
         </motion.button>
       </motion.div>
       <ParticleCanvas />
-      <SVGLayers />
+      <HeroBackground />
     </Element>
   );
 }
