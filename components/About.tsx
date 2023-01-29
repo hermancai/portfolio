@@ -34,7 +34,7 @@ export default function About() {
   const scrollToContacts = useScroll("Contact", 1000);
 
   return (
-    <Element name="About Me" className="pt-32 bg-slate-800">
+    <Element name="About Me" className="pt-40 bg-slate-800">
       <div className="flex justify-center w-full relative" ref={ref}>
         <span className="h-[80%] w-full top-[10%] absolute -skew-y-6">
           <motion.span

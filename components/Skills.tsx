@@ -72,7 +72,7 @@ export default function Skills() {
   };
 
   return (
-    <Element name="Skills" className="pt-32 bg-slate-800">
+    <Element name="Skills" className="pt-40 bg-slate-800">
       <div className="w-full flex justify-center relative">
         <span className="h-[70%] w-full top-[15%] absolute skew-y-6">
           <div className="w-full flex justify-center absolute top-0">

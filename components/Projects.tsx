@@ -97,7 +97,7 @@ export default function Projects() {
   };
 
   return (
-    <Element name="Projects" className="pt-32 bg-slate-800">
+    <Element name="Projects" className="pt-40 bg-slate-800">
       <div className="w-full flex flex-col gap-6 justify-center items-center text-white relative">
         <SectionHeader text="Projects" />
         <div className="flex flex-row flex-nowrap gap-8">
