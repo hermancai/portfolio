@@ -131,10 +131,13 @@ export default function Contact() {
           className="border border-slate-600 rounded bg-slate-900 flex flex-col w-full max-w-[32rem] px-4 sm:px-8 pt-6 gap-4"
         >
           <div className="flex flex-col gap-1">
-            <label className="text-slate-200">Name</label>
+            <label className="text-slate-200" htmlFor="name">
+              Name
+            </label>
             <input
               type="text"
               name="name"
+              id="name"
               className="w-full bg-zinc-900 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
               onChange={handleOnChange}
               onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
@@ -142,10 +145,13 @@ export default function Contact() {
             <AnimatedText text={errors.name} error={true} />
           </div>
           <div className="flex flex-col gap-1">
-            <label className="text-slate-200">Email</label>
+            <label className="text-slate-200" htmlFor="email">
+              Email
+            </label>
             <input
               type="text"
               name="email"
+              id="email"
               className="w-full bg-zinc-900 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
               onChange={handleOnChange}
               onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
@@ -153,10 +159,13 @@ export default function Contact() {
             <AnimatedText text={errors.email} error={true} />
           </div>
           <div className="flex flex-col gap-1">
-            <label className="text-slate-200">Message</label>
+            <label className="text-slate-200" htmlFor="message">
+              Message
+            </label>
             <textarea
               spellCheck={false}
               name="message"
+              id="message"
               className="w-full resize-y min-h-[8rem] bg-zinc-900 rounded border border-slate-600 focus:outline-none focus:border-slate-200 p-2 transition-[border-color] duration-300"
               onChange={handleOnChange}
             />

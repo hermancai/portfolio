@@ -21,6 +21,7 @@ function CustomIcon({ icon, name }: { icon: JSX.Element; name: string }) {
         activeClass="text-orange-500"
         className="peer h-6 aspect-square cursor-pointer hover:text-orange-500 transition-colors duration-300"
         onClick={scrollTo}
+        href="javascript:void(0)"
       >
         {icon}
       </Link>
