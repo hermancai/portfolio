@@ -111,7 +111,7 @@ export default function Contact() {
   };
 
   return (
-    <Element name="Contact" className="pt-40 pb-24 bg-slate-800">
+    <Element name="Contact" id="contact" className="pt-40 pb-24 bg-slate-800">
       <div className="w-full flex flex-col items-center justify-center gap-4 px-4 text-white">
         <SectionHeader text="Contact" />
         <p className="text-center mb-2">
