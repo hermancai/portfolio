@@ -10,6 +10,7 @@ export default function Hero() {
   return (
     <Element
       name="Home"
+      id="home"
       className="w-full h-screen min-h-[650px] flex justify-center text-white bg-gradient-to-b from-zinc-900 to-slate-900 relative overflow-hidden"
     >
       <motion.div
