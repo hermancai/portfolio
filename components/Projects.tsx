@@ -19,7 +19,7 @@ const cardList: CardContent[] = [
       "Express",
       "PostgreSQL",
     ],
-    liveLink: "https://note-storage.onrender.com/",
+    liveLink: "https://note-storage.up.railway.app/",
     github: "https://github.com/hermancai/notes",
   },
   {
