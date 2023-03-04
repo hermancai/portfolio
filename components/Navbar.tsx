@@ -44,8 +44,8 @@ export default function Navbar() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 1.5, delay: 1 } }}
-      className="flex flex-nowrap flex-row sm:flex-col fixed bottom-2 sm:bottom-0 sm:left-2 text-white z-50 border-2 border-zinc-400 rounded bg-zinc-900 px-2 py-2 gap-4 h-min left-1/2 -translate-x-1/2 sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-0"
+      animate={{ opacity: 1, transition: { duration: 1.5, delay: 1.5 } }}
+      className="flex flex-nowrap flex-row sm:flex-col fixed bottom-2 sm:bottom-0 sm:left-2 text-white z-50 border-2 border-zinc-400 rounded bg-black px-2 py-2 gap-4 h-min left-1/2 -translate-x-1/2 sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-0"
     >
       <CustomIcon icon={<HomeIcon />} name="Home" href="home" />
       <CustomIcon icon={<UserCircleIcon />} name="About Me" href="aboutme" />

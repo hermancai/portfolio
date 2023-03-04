@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-}
-
 @layer utilities {
   .no-scrollbar {
     scrollbar-width: none;
@@ -14,11 +11,24 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .text-shadow-orange-400 {
+    text-shadow: 0 0 0.3rem #fb923c;
+  }
+
+  .text-shadow-white {
+    text-shadow: 0 0 0.3rem #fff;
+  }
 }
 
+#hero-button::after {
+  transform: translateZ(-10px);
+  filter: drop-shadow(0 0 0.3rem #fff);
+}
 
-#tsparticles {
-  height: 100%;
+#hero-button:hover::after {
+  background-color: #fb923c;
+  filter: drop-shadow(0 0 0.3rem #fb923c);
 }
 
 /* For Firefox */
@@ -26,6 +36,7 @@ html {
   scrollbar-color: gray rgb(15, 23, 42);
 }
 
+/* For Chrome */
 ::-webkit-scrollbar {
   background-color: rgb(15, 23, 42);
 }

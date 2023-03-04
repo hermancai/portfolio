@@ -1,58 +1,95 @@
-import {
-  motion,
-  MotionValue,
-  useScroll,
-  useTransform,
-  AnimationProps,
-} from "framer-motion";
+import { motion, AnimationProps } from "framer-motion";
+import useParallax from "../hooks/useParallax";
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [0, distance]);
-}
-
-const containerVariants: AnimationProps["variants"] = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.5,
-    },
+const strokeVariants: AnimationProps["variants"] = {
+  hidden: {
+    width: 0,
+  },
+  visible: {
+    width: "100%",
+    transition: { duration: 1.25 },
   },
 };
 
-const layerVariants: AnimationProps["variants"] = {
-  hidden: { y: "5%", opacity: 0 },
-  show: { y: "0%", opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
+const delayStrokeVariants: AnimationProps["variants"] = {
+  hidden: {
+    width: 0,
+  },
+  visible: {
+    width: "100%",
+    transition: { delay: 0.75, duration: 1.25 },
+  },
+};
+
+const fillVariants: AnimationProps["variants"] = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.5, delay: 1 },
+  },
+};
+
+const delayFillVariants: AnimationProps["variants"] = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.5, delay: 1.75 },
+  },
 };
 
 export default function HeroBackground() {
-  const { scrollYProgress } = useScroll();
-  const y2 = useParallax(scrollYProgress, 200);
-  const y3 = useParallax(scrollYProgress, 400);
-  const y4 = useParallax(scrollYProgress, 500);
+  const [y1, y2] = useParallax([350, 250]);
 
   return (
-    <motion.div
-      className="w-full h-full absolute overflow-hidden"
-      initial="hidden"
-      animate="show"
-      variants={containerVariants}
-    >
-      <div className="bg-[url(/svglayers/1a.png)] absolute w-full h-full bg-repeat-x z-[5] bg-[bottom_left_-10rem] -bottom-[200px]" />
-      <motion.div
-        className="bg-[url(/svglayers/2a.png)] absolute w-full h-full bg-repeat-x z-[4] bg-[bottom_right_-20rem] sm:bg-[bottom_right_1rem] -bottom-[150px]"
-        style={{ y: y2 }}
-        variants={layerVariants}
-      />
-      <motion.div
-        className="bg-[url(/svglayers/3a.png)] absolute w-full h-full bg-repeat-x z-[3] bg-[bottom_left_-80rem] sm:bg-[bottom_left_-70rem] -bottom-[200px]"
-        style={{ y: y3 }}
-        variants={layerVariants}
-      />
-      <motion.div
-        className="bg-[url(/svglayers/4a.png)] absolute w-full h-full bg-repeat-x z-[2] bg-[bottom_right_-70rem] sm:bottom-[35px]"
-        style={{ y: y4 }}
-        variants={layerVariants}
-      />
-    </motion.div>
+    <div className="w-full h-full absolute bottom-0 bg-slate-800">
+      <motion.div style={{ y: y1 }} className="absolute bottom-0 w-full h-full">
+        <span className="w-full h-1/2 top-1/4 absolute -skew-y-6">
+          <motion.span
+            className="absolute w-full h-full top-0 bg-slate-700"
+            initial="hidden"
+            animate="visible"
+            variants={fillVariants}
+          />
+          <motion.span
+            className="absolute h-1 bg-slate-900 top-0 left-0"
+            initial="hidden"
+            animate="visible"
+            variants={strokeVariants}
+          />
+          <motion.span
+            className="absolute h-1 bg-slate-900 bottom-0 left-0"
+            initial="hidden"
+            animate="visible"
+            variants={strokeVariants}
+          />
+        </span>
+      </motion.div>
+      <motion.div style={{ y: y2 }} className="absolute bottom-0 w-full h-full">
+        <span className="w-full h-1/2 top-1/4 absolute skew-y-6">
+          <motion.span
+            className="absolute w-full h-full top-0 bg-slate-900"
+            initial="hidden"
+            animate="visible"
+            variants={delayFillVariants}
+          />
+          <motion.span
+            className="absolute h-1 bg-black top-0 right-0"
+            initial="hidden"
+            animate="visible"
+            variants={delayStrokeVariants}
+          />
+          <motion.span
+            className="absolute h-1 bg-black bottom-0 right-0"
+            initial="hidden"
+            animate="visible"
+            variants={delayStrokeVariants}
+          />
+        </span>
+      </motion.div>
+    </div>
   );
 }
