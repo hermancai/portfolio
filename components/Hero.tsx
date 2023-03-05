@@ -9,6 +9,8 @@ export default function Hero() {
   const scrollToSection = useScroll("About Me", 2000);
   const [y1] = useParallax([150]);
   const buttonRef = React.useRef(null);
+  const [rotateX, setRotateX] = React.useState(0);
+  const [rotateY, setRotateY] = React.useState(0);
 
   const rotateElement = React.useCallback(
     (e: MouseEvent, element: HTMLButtonElement | null) => {
@@ -21,15 +23,15 @@ export default function Hero() {
       // Get center of element relative to viewport
       const offset = element.getBoundingClientRect();
       const midX = offset.left + element.clientWidth / 2;
-      const midY = offset.top + element.clientHeight / 2;
+      const midY = Math.max(0, offset.top) + element.clientHeight / 2;
 
       // Get distance from center as capped/scaled-down degrees to rotate
       const offsetX = Math.min(30, ((x - midX) / midX) * 30);
       const offsetY = Math.min(30, ((y - midY) / midY) * 30);
 
       // X and Y are flipped to match rotation around x/y axis
-      element.style.setProperty("--rotateX", -1 * offsetY + "deg");
-      element.style.setProperty("--rotateY", offsetX + "deg");
+      setRotateX(-1 * offsetY);
+      setRotateY(offsetX);
     },
     []
   );
@@ -55,7 +57,7 @@ export default function Hero() {
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-col items-center text-center p-6"
+        className="flex flex-col items-center text-center p-6 mb-8"
         style={{ y: y1 }}
       >
         <p className="leading-8">
@@ -89,8 +91,7 @@ export default function Hero() {
           <span
             style={{
               transformStyle: "preserve-3d",
-              transform:
-                "perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX))",
+              transform: `perspective(5000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`,
             }}
             id="hero-button"
             className="absolute top-0 bg-black text-orange-400 whitespace-nowrap px-4 py-2 rounded text-shadow-orange-400 after:bg-white after:-inset-[.1rem] after:-z-10 after:absolute after:rounded after:transition-colors after:duration-300"
