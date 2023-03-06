@@ -42,7 +42,7 @@ const delayFillVariants: AnimationProps["variants"] = {
 };
 
 export default function HeroBackground() {
-  const [y1, y2] = useParallax([350, 250]);
+  const [y1, y2] = useParallax([0, -200]);
 
   return (
     <div className="w-full h-full absolute bottom-0 bg-slate-800">
@@ -53,6 +53,7 @@ export default function HeroBackground() {
             initial="hidden"
             animate="visible"
             variants={fillVariants}
+            id="grid-bg"
           />
           <motion.span
             className="absolute h-1 bg-slate-900 top-0 left-0"

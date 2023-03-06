@@ -120,7 +120,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/hermancai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-orange-400"
+            className="underline text-orange-400 hover:text-shadow-orange-400 transition-[text-shadow]"
           >
             LinkedIn
           </a>
@@ -128,7 +128,7 @@ export default function Contact() {
         </p>
         <form
           onSubmit={handleSubmit}
-          className="border border-slate-600 rounded bg-slate-900 flex flex-col w-full max-w-[32rem] px-4 sm:px-8 pt-6 gap-4"
+          className="border-2 border-slate-400 rounded bg-slate-900 flex flex-col w-full max-w-[32rem] px-4 sm:px-8 pt-6 gap-4"
         >
           <div className="flex flex-col gap-1">
             <label className="text-slate-200" htmlFor="name">

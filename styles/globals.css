@@ -15,10 +15,6 @@
   .text-shadow-orange-400 {
     text-shadow: 0 0 0.3rem #fb923c;
   }
-
-  .text-shadow-white {
-    text-shadow: 0 0 0.3rem #fff;
-  }
 }
 
 #hero-button::after {
@@ -29,6 +25,12 @@
 #hero-button:hover::after {
   background-color: #fb923c;
   filter: drop-shadow(0 0 0.3rem #fb923c);
+}
+
+#grid-bg {
+  background: 
+    linear-gradient(to left, rgba(255,255,255, 0.5) 1px, transparent 1px), #334155;
+  background-size: 40px 40px;
 }
 
 /* For Firefox */

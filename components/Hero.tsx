@@ -7,7 +7,7 @@ import React from "react";
 
 export default function Hero() {
   const scrollToSection = useScroll("About Me", 2000);
-  const [y1] = useParallax([150]);
+  const [y1] = useParallax([-400]);
   const buttonRef = React.useRef(null);
   const [rotateX, setRotateX] = React.useState(0);
   const [rotateY, setRotateY] = React.useState(0);
@@ -57,17 +57,17 @@ export default function Hero() {
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-col items-center text-center p-6 mb-8"
+        className="flex flex-col items-center text-center p-6 mb-12 gap-2"
         style={{ y: y1 }}
       >
-        <p className="leading-8">
+        <p className="">
           <span className="sm:text-lg">Hello, my name is</span>
           <br />
           <span className="text-orange-400 text-4xl sm:text-5xl">
             Herman Cai
           </span>
         </p>
-        <p className="leading-8">
+        <p className="leading-10">
           <span className="sm:text-lg">
             I&apos;m looking to start my career as a
           </span>
@@ -94,7 +94,7 @@ export default function Hero() {
               transform: `perspective(5000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`,
             }}
             id="hero-button"
-            className="absolute top-0 bg-black text-orange-400 whitespace-nowrap px-4 py-2 rounded text-shadow-orange-400 after:bg-white after:-inset-[.1rem] after:-z-10 after:absolute after:rounded after:transition-colors after:duration-300"
+            className="absolute top-0 bg-black text-orange-400 whitespace-nowrap px-4 py-2 rounded text-shadow-orange-400 after:bg-white after:-inset-[.1rem] after:-z-20 after:absolute after:rounded after:transition-colors after:duration-300"
           >
             About Me
           </span>

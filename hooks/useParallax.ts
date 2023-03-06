@@ -18,7 +18,7 @@ export default function useParallax(values: number[]) {
   const results: MotionValue<number>[] = [];
 
   values.map((val) => {
-    results.push(useTransform(scrollYProgress, [0, 1], [0, val]));
+    results.push(useTransform(scrollYProgress, [-1, 1], [-val, val]));
   });
 
   return results;

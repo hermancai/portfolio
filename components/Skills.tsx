@@ -72,36 +72,34 @@ export default function Skills() {
   };
 
   return (
-    <Element name="Skills" id="skills" className="pt-40 bg-slate-800">
+    <Element name="Skills" id="skills" className="pt-56 bg-slate-800">
       <div className="w-full flex justify-center relative">
-        <span className="h-[70%] w-full top-[15%] absolute skew-y-6">
-          <div className="w-full flex justify-center absolute top-0">
-            <motion.span
-              className="h-1 bg-gray-700 absolute"
-              initial="hidden"
-              animate={inView ? "visible" : ""}
-              variants={strokeVariants}
-            />
-          </div>
-          <div className="w-full flex justify-center absolute bottom-0">
-            <motion.span
-              className="h-1 bg-gray-700 absolute"
-              initial="hidden"
-              animate={inView ? "visible" : ""}
-              variants={strokeVariants}
-            />
-          </div>
+        <div className="h-[80%] w-full top-[10%] absolute skew-y-6">
           <motion.span
-            className="h-full w-full block absolute bg-gradient-to-b from-gray-700 to-gray-700 via-slate-700"
+            className="h-full w-full block absolute bg-slate-700"
             initial="hidden"
             animate={inView ? "visible" : ""}
             variants={fillVariants}
           />
-        </span>
+          <div className="w-full h-full absolute top-0 flex justify-center">
+            <motion.span
+              className="h-1 bg-slate-900 absolute top-0"
+              initial="hidden"
+              animate={inView ? "visible" : ""}
+              variants={strokeVariants}
+            />
+            <motion.span
+              className="h-1 bg-slate-900 absolute bottom-0"
+              initial="hidden"
+              animate={inView ? "visible" : ""}
+              variants={strokeVariants}
+            />
+          </div>
+        </div>
         <div className="w-full relative flex flex-col justify-center items-center gap-8 text-white ">
           <SectionHeader text="Skills" />
           <motion.div
-            className="flex flex-row flex-nowrap relative rounded bg-slate-900 cursor-pointer shadow-[0_0_2px_black] hover:shadow-[0_0_1px_white] transition-[box-shadow] duration-300"
+            className="flex flex-row flex-nowrap relative rounded bg-slate-900 border-black border-[3px] cursor-pointer shadow-[0_0_1px_black] hover:shadow-[0_0_1px_white] transition-[box-shadow] duration-300"
             onClick={toggleShowText}
             animate={
               inView
