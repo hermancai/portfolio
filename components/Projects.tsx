@@ -103,7 +103,7 @@ export default function Projects() {
         <div className="flex flex-row flex-nowrap gap-8">
           {cardList.map((_, i) => (
             <div
-              className={`w-5 h-5 rounded-full cursor-pointer transition-colors border-2 border-gray-900 duration-300 ${
+              className={`w-6 h-6 rounded-full cursor-pointer border-2 border-gray-900 transition-colors duration-300 hover:border-orange-400 ${
                 i === selectedCard ? "bg-orange-400" : "bg-slate-600"
               }`}
               key={i}
@@ -114,19 +114,19 @@ export default function Projects() {
         <div className="max-w-full w-full relative overflow-hidden">
           <div className="absolute bottom-[5%] w-full h-[90%]">
             <motion.span
-              className="absolute h-1 bg-gray-900 top-0 left-0"
-              animate={inView ? "show" : "hidden"}
-              variants={strokeVariants}
-            />
-            <motion.span
-              className="absolute h-1 bg-gray-900 bottom-0 right-0"
-              animate={inView ? "show" : "hidden"}
-              variants={strokeVariants}
-            />
-            <motion.span
-              className="absolute w-full h-full top-0 bg-gradient-to-b from-gray-900 to-gray-900 via-slate-900"
+              className="absolute w-full h-full top-0  bg-slate-900"
               animate={inView ? "show" : "hidden"}
               variants={fillVariants}
+            />
+            <motion.span
+              className="absolute h-1 bg-black top-0 left-0"
+              animate={inView ? "show" : "hidden"}
+              variants={strokeVariants}
+            />
+            <motion.span
+              className="absolute h-1 bg-black bottom-0 right-0"
+              animate={inView ? "show" : "hidden"}
+              variants={strokeVariants}
             />
           </div>
           <div

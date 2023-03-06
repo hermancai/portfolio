@@ -14,12 +14,14 @@ function CustomIcon({
   icon,
   name,
   href,
+  offset,
 }: {
   icon: JSX.Element;
   name: string;
   href: string;
+  offset: number;
 }) {
-  const scrollTo = useScroll(name, 1000);
+  const scrollTo = useScroll(name + " header", offset);
 
   return (
     <div className="relative flex flex-nowrap">
@@ -42,20 +44,38 @@ function CustomIcon({
 
 export default function Navbar() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 1.5, delay: 1 } }}
-      className="flex flex-nowrap flex-row sm:flex-col fixed bottom-2 sm:bottom-0 sm:left-2 text-white z-50 border-2 border-zinc-400 rounded bg-zinc-900 px-2 py-2 gap-4 h-min left-1/2 -translate-x-1/2 sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-0"
-    >
-      <CustomIcon icon={<HomeIcon />} name="Home" href="home" />
-      <CustomIcon icon={<UserCircleIcon />} name="About Me" href="aboutme" />
-      <CustomIcon icon={<WrenchIcon />} name="Skills" href="skills" />
-      <CustomIcon
-        icon={<ComputerDesktopIcon />}
-        name="Projects"
-        href="projects"
-      />
-      <CustomIcon icon={<EnvelopeIcon />} name="Contact" href="contact" />
-    </motion.div>
+    <div className="z-50 sticky w-full h-0 flex justify-center items-center bottom-8 sm:w-0 sm:bottom-0 sm:left-8 sm:-translate-y-[50vh]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 1.5, delay: 1.5 } }}
+        className="flex flex-nowrap flex-row sm:flex-col text-white border-2 border-zinc-400 rounded bg-black px-2 py-2 gap-4"
+      >
+        <CustomIcon icon={<HomeIcon />} name="Home" offset={0} href="home" />
+        <CustomIcon
+          icon={<UserCircleIcon />}
+          name="About Me"
+          offset={-100}
+          href="aboutme"
+        />
+        <CustomIcon
+          icon={<WrenchIcon />}
+          name="Skills"
+          offset={-100}
+          href="skills"
+        />
+        <CustomIcon
+          icon={<ComputerDesktopIcon />}
+          name="Projects"
+          offset={-35}
+          href="projects"
+        />
+        <CustomIcon
+          icon={<EnvelopeIcon />}
+          name="Contact"
+          offset={-50}
+          href="contact"
+        />
+      </motion.div>
+    </div>
   );
 }

@@ -55,7 +55,7 @@ export default function SkillIcon({
         }}
       >
         <motion.div
-          className="absolute w-full h-full bg-slate-900 p-4 border-2 border-black hover:border-orange-400 transition-colors duration-300 rounded-full flex justify-center items-center shadow-sm shadow-slate-900"
+          className="absolute w-full h-full bg-slate-900 p-4 border-[3px] border-black hover:border-orange-500 transition-colors duration-300 rounded-full flex justify-center items-center shadow-sm shadow-slate-900"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
@@ -73,7 +73,7 @@ export default function SkillIcon({
           />
         </motion.div>
         <motion.div
-          className="absolute w-full h-full flex justify-center items-center bg-slate-900 p-4 border-2 border-black hover:border-orange-400 transition-colors duration-300 rounded-full shadow-sm shadow-slate-900"
+          className="absolute w-full h-full flex justify-center items-center bg-slate-900 p-4 border-[3px] border-black hover:border-orange-500 transition-colors duration-300 rounded-full shadow-sm shadow-slate-900"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",

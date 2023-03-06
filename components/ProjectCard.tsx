@@ -54,7 +54,7 @@ export default function ProjectCard({ index, selectedCard, card }: CardProps) {
 
   return (
     <motion.div
-      className="bg-slate-900 w-[85vw] sm:w-[400px] h-full rounded border-2 border-slate-600 relative"
+      className="bg-slate-900 w-[85vw] sm:w-[400px] h-full rounded border-2 border-slate-400 relative"
       ref={ref}
       variants={cardVariants}
       animate={selectedCard === index ? "selected" : "notSelected"}

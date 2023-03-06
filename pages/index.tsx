@@ -64,12 +64,14 @@ export default function Home() {
         `}
       </Script>
       <main>
-        <Navbar />
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <div>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+          <Navbar />
+        </div>
         <Footer />
       </main>
     </>
