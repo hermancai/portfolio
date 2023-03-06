@@ -14,12 +14,14 @@ function CustomIcon({
   icon,
   name,
   href,
+  offset,
 }: {
   icon: JSX.Element;
   name: string;
   href: string;
+  offset: number;
 }) {
-  const scrollTo = useScroll(name, 1000);
+  const scrollTo = useScroll(name + " header", offset);
 
   return (
     <div className="relative flex flex-nowrap">
@@ -48,15 +50,31 @@ export default function Navbar() {
         animate={{ opacity: 1, transition: { duration: 1.5, delay: 1.5 } }}
         className="flex flex-nowrap flex-row sm:flex-col text-white border-2 border-zinc-400 rounded bg-black px-2 py-2 gap-4"
       >
-        <CustomIcon icon={<HomeIcon />} name="Home" href="home" />
-        <CustomIcon icon={<UserCircleIcon />} name="About Me" href="aboutme" />
-        <CustomIcon icon={<WrenchIcon />} name="Skills" href="skills" />
+        <CustomIcon icon={<HomeIcon />} name="Home" offset={0} href="home" />
+        <CustomIcon
+          icon={<UserCircleIcon />}
+          name="About Me"
+          offset={-100}
+          href="aboutme"
+        />
+        <CustomIcon
+          icon={<WrenchIcon />}
+          name="Skills"
+          offset={-100}
+          href="skills"
+        />
         <CustomIcon
           icon={<ComputerDesktopIcon />}
           name="Projects"
+          offset={-35}
           href="projects"
         />
-        <CustomIcon icon={<EnvelopeIcon />} name="Contact" href="contact" />
+        <CustomIcon
+          icon={<EnvelopeIcon />}
+          name="Contact"
+          offset={-50}
+          href="contact"
+        />
       </motion.div>
     </div>
   );

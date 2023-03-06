@@ -6,7 +6,7 @@ import useParallax from "../hooks/useParallax";
 import React from "react";
 
 export default function Hero() {
-  const scrollToSection = useScroll("About Me", 2000);
+  const scrollToSection = useScroll("About Me header", -100, 2000);
   const [y1] = useParallax([-400]);
   const buttonRef = React.useRef(null);
   const [rotateX, setRotateX] = React.useState(0);
@@ -50,6 +50,7 @@ export default function Hero() {
       id="home"
       className="w-full h-screen min-h-[650px] flex justify-center items-center text-white bg-gradient-to-b from-zinc-900 to-slate-900 relative overflow-hidden"
     >
+      <Element name="Home header" className="absolute top-0" />
       <HeroBackground />
       <motion.div
         initial={{ opacity: 0 }}

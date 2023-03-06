@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Element } from "react-scroll";
 import SectionHeader from "./SectionHeader";
 import useScroll from "../hooks/useScroll";
-import useParallax from "../hooks/useParallax";
 
 // For background
 const strokeVariants: AnimationProps["variants"] = {
@@ -32,7 +31,7 @@ export default function About() {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true });
 
-  const scrollToContacts = useScroll("Contact", 1000);
+  const scrollToContacts = useScroll("Contact header", -50);
 
   return (
     <Element name="About Me" id="aboutme" className="pt-40 bg-slate-800">
