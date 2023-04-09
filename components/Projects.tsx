@@ -40,6 +40,14 @@ const cardList: CardContent[] = [
     github: "https://github.com/hermancai/project_manager",
   },
   {
+    title: "Chat App",
+    description: "Send messages in real time, like with Slack or Discord.",
+    image: "/projects/chatapp.png",
+    tech: ["React", "Redux", "TailwindCSS", "Firebase"],
+    liveLink: "",
+    github: "https://github.com/hermancai/chat_app",
+  },
+  {
     title: "My Portfolio",
     description: "",
     image: "/projects/portfolio.png",
