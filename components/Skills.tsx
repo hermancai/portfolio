@@ -10,11 +10,13 @@ const skillList = [
   { name: "JavaScript", path: "/icons/javascript.png" },
   { name: "TypeScript", path: "/icons/typescript.png" },
   { name: "React", path: "/icons/react.png" },
+  { name: "Next.js", path: "/icons/next.png" },
   { name: "Redux", path: "/icons/redux.png" },
   { name: "Tailwind", path: "/icons/tailwindcss.png" },
   { name: "Python", path: "/icons/python.png" },
   { name: "Node.js", path: "/icons/node.png" },
   { name: "Express", path: "/icons/express.png" },
+  { name: "AWS", path: "/icons/aws.png" },
   { name: "PostgreSQL", path: "/icons/postgres.png" },
   { name: "MongoDB", path: "/icons/mongodb.png" },
 ];

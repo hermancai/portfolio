@@ -63,7 +63,7 @@ export default function About() {
         <div className="max-w-[32rem] flex flex-col justify-center items-center gap-4 px-8">
           <SectionHeader text="About Me" />
           <motion.p
-            className="text-white leading-8"
+            className="text-white leading-8 whitespace-pre-wrap"
             animate={
               inView
                 ? { opacity: 1, y: "0%", transition: { duration: 1 } }
