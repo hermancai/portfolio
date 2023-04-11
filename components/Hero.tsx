@@ -3,16 +3,16 @@ import HeroBackground from "./HeroBackground";
 import { Element } from "react-scroll";
 import useScroll from "../hooks/useScroll";
 import useParallax from "../hooks/useParallax";
-import React from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 
 export default function Hero() {
   const scrollToSection = useScroll("About Me header", -100, 2000);
   const [y1] = useParallax([-400]);
-  const buttonRef = React.useRef(null);
-  const [rotateX, setRotateX] = React.useState(0);
-  const [rotateY, setRotateY] = React.useState(0);
+  const buttonRef = useRef(null);
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
 
-  const rotateElement = React.useCallback(
+  const rotateElement = useCallback(
     (e: MouseEvent, element: HTMLButtonElement | null) => {
       if (!element) return;
 
@@ -36,7 +36,7 @@ export default function Hero() {
     []
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined" && buttonRef.current) {
       window.document.addEventListener("mousemove", (e) =>
         rotateElement(e, buttonRef.current)
@@ -61,20 +61,65 @@ export default function Hero() {
         className="flex flex-col items-center text-center p-6 mb-12 gap-2"
         style={{ y: y1 }}
       >
-        <p className="">
-          <span className="sm:text-lg">Hello, my name is</span>
-          <br />
-          <span className="text-orange-400 text-4xl sm:text-5xl">
-            Herman Cai
-          </span>
-        </p>
-        <p className="leading-10">
-          <span className="sm:text-lg">
-            I&apos;m looking to start my career as a
-          </span>
-          <br />
-          <span className="text-3xl sm:text-4xl">web developer</span>
-        </p>
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.75, delay: 0.75 }}
+          >
+            <p className="text-orange-400 text-4xl sm:text-5xl">Herman Cai</p>
+            <p className="text-xl sm:text-2xl font-extralight">
+              FULL STACK DEVELOPER
+            </p>
+          </motion.div>
+
+          <motion.svg
+            className="absolute h-full right-1/2 top-0 drop-shadow-white"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="1.5"
+            initial={{ right: "50%" }}
+            animate={{ right: "100%" }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.25 }}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            ></path>
+          </motion.svg>
+
+          <motion.svg
+            viewBox="0 0 100 100"
+            className="h-full absolute top-0 left-0 right-0 ml-auto mr-auto drop-shadow-white"
+            stroke="white"
+            strokeWidth="6"
+            strokeLinecap="round"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            transition={{ duration: 1, delay: 0.25 }}
+          >
+            <path d="M 35 85 L 65 15"></path>
+          </motion.svg>
+
+          <motion.svg
+            className="absolute h-full left-1/2 top-0 drop-shadow-white"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="1.5"
+            initial={{ left: "50%" }}
+            animate={{ left: "100%" }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.25 }}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            ></path>
+          </motion.svg>
+        </div>
 
         <motion.div
           ref={buttonRef}
@@ -82,7 +127,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{
             duration: 1,
-            delay: 2,
+            delay: 1.75,
             ease: "easeInOut",
           }}
           onClick={scrollToSection}

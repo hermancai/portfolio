@@ -60,7 +60,7 @@ export default function About() {
           <div className="w-full flex justify-center absolute bottom-0"></div>
         </div>
 
-        <div className="max-w-[30rem] flex flex-col justify-center items-center gap-4 px-8">
+        <div className="max-w-[32rem] flex flex-col justify-center items-center gap-4 px-8">
           <SectionHeader text="About Me" />
           <motion.p
             className="text-white leading-8"
@@ -70,13 +70,13 @@ export default function About() {
                 : { opacity: 0, y: "50%", transition: { duration: 0 } }
             }
           >
-            &emsp;&emsp;My name is{" "}
-            <span className="text-orange-400">Herman Cai</span>. I&apos;m a new
-            grad with degrees in Computer Science and Earth Science. I&apos;ve
-            been building projects with{" "}
-            <span className="text-orange-400">React and Node</span> for about 2
-            years, and I am looking to begin a career in web development. Please
-            feel free to{" "}
+            &emsp;&emsp;Hello! My name is{" "}
+            <span className="text-orange-400">Herman Cai</span>, and I&apos;m an
+            aspiring web developer. I enjoy front-end development with React,
+            which I have been using for two years. On the back-end, I currently
+            use Node and Express. I have a degree in computer science, and I
+            strive to be detail-oriented and self-sufficient as I continue my
+            web development journey. Please feel free to{" "}
             <span
               className="underline text-orange-400 cursor-pointer hover:text-shadow-orange-400 transition-[text-shadow]"
               onClick={scrollToContacts}
