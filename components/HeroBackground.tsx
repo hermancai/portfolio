@@ -7,7 +7,7 @@ const strokeVariants: AnimationProps["variants"] = {
   },
   visible: {
     width: "100%",
-    transition: { duration: 1.25 },
+    transition: { duration: 1.25, delay: 1.5 },
   },
 };
 
@@ -27,7 +27,7 @@ const fillVariants: AnimationProps["variants"] = {
   },
   visible: {
     opacity: 1,
-    transition: { duration: 0.5, delay: 1 },
+    transition: { duration: 0.5, delay: 2.5 },
   },
 };
 

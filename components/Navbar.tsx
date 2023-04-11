@@ -47,7 +47,7 @@ export default function Navbar() {
     <div className="z-50 sticky w-full h-0 flex justify-center items-center bottom-8 sm:w-0 sm:bottom-0 sm:left-8 sm:-translate-y-[50vh]">
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 1.5, delay: 1.5 } }}
+        animate={{ opacity: 1, transition: { duration: 1.5, delay: 1.75 } }}
         className="flex flex-nowrap flex-row sm:flex-col text-white border-2 border-zinc-400 rounded bg-black px-2 py-2 gap-4"
       >
         <CustomIcon icon={<HomeIcon />} name="Home" offset={0} href="home" />
