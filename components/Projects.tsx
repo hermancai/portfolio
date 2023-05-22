@@ -6,7 +6,16 @@ import SectionHeader from "./SectionHeader";
 
 const cardList: CardContent[] = [
   {
-    title: "Remote Storage",
+    title: "Earthquake Map",
+    description:
+      "Search and visualize earthquake data on a map, table, and charts.",
+    image: "/projects/eqmapnext.png",
+    tech: ["Google Cloud Platform", "TypeScript", "React", "TailwindCSS"],
+    liveLink: "https://earthquakemap.vercel.app/",
+    github: "https://github.com/hermancai/eqmap_next",
+  },
+  {
+    title: "Image Cloud Storage",
     description: "Upload and access remotely stored text and image files.",
     image: "/projects/notes.png",
     tech: [
@@ -21,15 +30,6 @@ const cardList: CardContent[] = [
     ],
     liveLink: "https://note-storage.up.railway.app/",
     github: "https://github.com/hermancai/notes",
-  },
-  {
-    title: "Earthquake Mapper",
-    description:
-      "Visualize past earthquakes on a map using data from the U.S. Geological Survey.",
-    image: "/projects/eqmap.png",
-    tech: ["Google Cloud Platform", "TypeScript", "React", "TailwindCSS"],
-    liveLink: "https://eqmap-silk.vercel.app/",
-    github: "https://github.com/hermancai/eqmap_react",
   },
   {
     title: "Project Tracker",

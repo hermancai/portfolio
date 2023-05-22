@@ -66,8 +66,12 @@ export default function About() {
             className="text-white leading-8 whitespace-pre-wrap"
             animate={
               inView
-                ? { opacity: 1, y: "0%", transition: { duration: 1 } }
-                : { opacity: 0, y: "50%", transition: { duration: 0 } }
+                ? {
+                    opacity: 1,
+                    y: "0%",
+                    transition: { duration: 1, ease: "easeInOut" },
+                  }
+                : { opacity: 0, y: "20%", transition: { duration: 0 } }
             }
           >
             &emsp;&emsp;Hello! My name is{" "}
