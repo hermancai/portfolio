@@ -10,13 +10,6 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 export default function Home() {
-  // Reset scroll position to top on page reload
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.history.scrollRestoration = "manual";
-    }
-  }, []);
-
   return (
     <>
       <Head>
@@ -50,7 +43,7 @@ export default function Home() {
         />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f172a" />
       </Head>
-      <Script
+      {/* <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-3HRV9HKLT0"
         strategy="afterInteractive"
       />
@@ -62,17 +55,10 @@ export default function Home() {
 
           gtag('config', 'G-3HRV9HKLT0');
         `}
-      </Script>
-      <main>
-        <div>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Contact />
-          <Navbar />
-        </div>
-        <Footer />
+      </Script> */}
+      <main className="bg-zinc-900">
+        <Navbar />
+        <Hero />
       </main>
     </>
   );
