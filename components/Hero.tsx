@@ -3,8 +3,9 @@ import ParticlesGlobe from "./ParticlesGlobe";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="w-[80%] sm:w-3/4 px-4 py-16 flex flex-col justify-center max-w-[50rem]">
+    <div className="min-h-screen flex justify-center items-center relative">
+      <span className="absolute bottom-0 w-full h-[10%] bg-gradient-to-t from-zinc-900 z-30" />
+      <div className="w-[80%] sm:w-3/4 px-4 py-32 flex flex-col justify-center max-w-[50rem]">
         <div className="flex flex-col font-raleway text-white z-20 gap-2 sm:gap-4">
           <div className="flex flex-col sm:flex-row whitespace-pre text-lg sm:text-2xl">
             <p>

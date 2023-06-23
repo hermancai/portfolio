@@ -120,13 +120,13 @@ export default function ParticlesGlobe() {
 
   return (
     <div className="h-full w-full rounded-full relative">
-      <Image src="/globe.png" alt="globe" fill />
       <Particles
         id="tsparticles-globe"
         init={particlesInit}
         options={options}
-        className="h-full rounded-full overflow-hidden bg-zinc-900"
+        className="h-full rounded-full overflow-hidden bg-zinc-900 isolate"
       />
+      <Image src="/globe.png" alt="globe" fill />
     </div>
   );
 }
