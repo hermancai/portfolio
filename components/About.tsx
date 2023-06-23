@@ -1,136 +1,74 @@
-import React from "react";
-import { AnimationProps, motion, useInView } from "framer-motion";
-import Image from "next/image";
-import { Element } from "react-scroll";
-import SectionHeader from "./SectionHeader";
-import useScroll from "../hooks/useScroll";
-
-// For background
-const strokeVariants: AnimationProps["variants"] = {
-  hidden: {
-    width: 0,
-  },
-  visible: {
-    width: "100%",
-    transition: { duration: 1.25, ease: "easeInOut" },
-  },
-};
-
-// For background
-const fillVariants: AnimationProps["variants"] = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.5, delay: 1 },
-  },
-};
-
 export default function About() {
-  const ref = React.useRef(null);
-  const inView = useInView(ref, { once: true });
-
-  const scrollToContacts = useScroll("Contact header", -50);
-
   return (
-    <Element name="About Me" id="aboutme" className="pt-40 bg-slate-800">
-      <div className="flex justify-center w-full relative" ref={ref}>
-        <div className="h-[90%] w-full top-[5%] absolute -skew-y-6">
-          <motion.span
-            className="h-full w-full absolute bg-slate-900"
-            initial="hidden"
-            animate={inView ? "visible" : ""}
-            variants={fillVariants}
-          />
-          <div className="w-full h-full absolute top-0 flex justify-center">
-            <motion.span
-              className="h-1 bg-black absolute top-0"
-              initial="hidden"
-              animate={inView ? "visible" : ""}
-              variants={strokeVariants}
+    <div className="flex flex-col justify-center items-center text-white">
+      <div className="w-[95%] md:w-[85%] sm:w-3/4 flex flex-row max-w-[50rem] p-8 gap-8">
+        <div className="justify-center items-center hidden md:flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={0.5}
+            stroke="currentColor"
+            className="w-32 h-32"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
             />
-            <motion.span
-              className="h-1 bg-black absolute bottom-0"
-              initial="hidden"
-              animate={inView ? "visible" : ""}
-              variants={strokeVariants}
-            />
-          </div>
-          <div className="w-full flex justify-center absolute bottom-0"></div>
+          </svg>
         </div>
 
-        <div className="max-w-[32rem] flex flex-col justify-center items-center gap-4 px-8">
-          <SectionHeader text="About Me" />
-          <motion.p
-            className="text-white leading-8 whitespace-pre-wrap"
-            animate={
-              inView
-                ? {
-                    opacity: 1,
-                    y: "0%",
-                    transition: { duration: 1, ease: "easeInOut" },
-                  }
-                : { opacity: 0, y: "20%", transition: { duration: 0 } }
-            }
-          >
-            &emsp;&emsp;Hello! My name is{" "}
-            <span className="text-orange-400">Herman Cai</span>, and I&apos;m an
-            aspiring web developer. I enjoy front-end development with React,
-            which I have been using for two years. On the back-end, I currently
-            use Node and Express. I have a degree in computer science, and I
-            strive to be detail-oriented and self-sufficient as I continue my
-            web development journey. Please feel free to{" "}
-            <span
-              className="underline text-orange-400 cursor-pointer hover:text-shadow-orange-400 transition-[text-shadow]"
-              onClick={scrollToContacts}
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-row items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={0.5}
+              stroke="currentColor"
+              className="w-12 h-12 block md:hidden"
             >
-              contact me
-            </span>{" "}
-            regarding any inquiries or opportunities!
-          </motion.p>
-          <motion.div
-            className="flex justify-evenly w-full"
-            animate={
-              inView
-                ? { opacity: 1, transition: { duration: 1, delay: 1 } }
-                : { opacity: 0 }
-            }
-          >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <p>
+              <span className="font-raleway text-3xl whitespace-nowrap text-transparent bg-clip-text bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)]">
+                About Me
+              </span>
+            </p>
+          </div>
+
+          <p>
+            Hello! My name is Herman Cai and I am a full stack developer. I
+            strive for efficiency and pixel-perfection in my web development
+            process. My coding philosophy is that I can learn anything necessary
+            to get the job done. If you can think of it, I can build it. Please
+            feel free to reach out regarding any inquiries or opportunities.
+          </p>
+          <div className="flex flex-row gap-4 mt-2">
             <a
               href="https://github.com/hermancai"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 relative flex items-center justify-center w-max group text-white flex-nowrap gap-2"
+              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-zinc-900 w-min hover:drop-shadow-white transition-[drop_shadow] duration-200"
             >
-              <Image
-                src="/icons/github.png"
-                alt="github logo"
-                width={20}
-                height={20}
-              />
               GitHub
-              <span className="absolute bottom-0 h-[1px] w-0 group-hover:w-full bg-orange-500 flex transition-[width] duration-500 ease-in-out" />
             </a>
-
             <a
               href="https://www.linkedin.com/in/hermancai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 relative flex items-center justify-center w-max group text-white flex-nowrap gap-2"
+              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-zinc-900 w-min hover:drop-shadow-white transition-[drop_shadow] duration-200"
             >
-              <Image
-                src="/icons/linkedin.png"
-                alt="linkedin logo"
-                width={20}
-                height={20}
-              />
               LinkedIn
-              <span className="absolute bottom-0 h-[1px] w-0 group-hover:w-full bg-orange-500 flex transition-[width] duration-500 ease-in-out" />
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </Element>
+    </div>
   );
 }
