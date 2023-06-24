@@ -1,8 +1,5 @@
 import React from "react";
 import SkillIcon from "./SkillIcon";
-import { Element } from "react-scroll";
-import { AnimationProps, motion, useInView } from "framer-motion";
-import SectionHeader from "./SectionHeader";
 
 const skillList = [
   { name: "HTML", path: "/icons/html.png" },
@@ -21,42 +18,7 @@ const skillList = [
   { name: "MongoDB", path: "/icons/mongodb.png" },
 ];
 
-// Container for skill icons
-const container: AnimationProps["variants"] = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-// For background
-const strokeVariants: AnimationProps["variants"] = {
-  hidden: {
-    width: 0,
-  },
-  visible: {
-    width: "100%",
-    transition: { duration: 1.25, ease: "easeInOut" },
-  },
-};
-
-// For background
-const fillVariants: AnimationProps["variants"] = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.5, delay: 1 },
-  },
-};
-
 export default function Skills() {
-  const ref = React.useRef(null);
-  const inView = useInView(ref, { once: true });
-
   const [iconState, setIconState] = React.useState(skillList.map(() => false));
   const [showText, setShowText] = React.useState(false);
 
@@ -74,85 +36,57 @@ export default function Skills() {
   };
 
   return (
-    <Element name="Skills" id="skills" className="pt-56 bg-slate-800">
-      <div className="w-full flex justify-center relative">
-        <div className="h-[80%] w-full top-[10%] absolute skew-y-6">
-          <motion.span
-            className="h-full w-full block absolute bg-slate-700"
-            initial="hidden"
-            animate={inView ? "visible" : ""}
-            variants={fillVariants}
-          />
-          <div className="w-full h-full absolute top-0 flex justify-center">
-            <motion.span
-              className="h-1 bg-slate-900 absolute top-0"
-              initial="hidden"
-              animate={inView ? "visible" : ""}
-              variants={strokeVariants}
+    <div className="flex flex-col justify-center items-center text-white">
+      <div className="flex flex-col md:flex-row w-[95%] md:w-[85%] sm:w-3/4 max-w-[50rem] p-8 gap-4 md:gap-8">
+        <div className="md:min-w-[8rem] md:min-h-[8rem] flex flex-row md:flex-col md:justify-center items-center gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={0.5}
+            stroke="currentColor"
+            className="w-11 h-11 md:w-24 md:h-24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z"
             />
-            <motion.span
-              className="h-1 bg-slate-900 absolute bottom-0"
-              initial="hidden"
-              animate={inView ? "visible" : ""}
-              variants={strokeVariants}
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.867 19.125h.008v.008h-.008v-.008z"
             />
-          </div>
-        </div>
-        <div className="w-full relative flex flex-col justify-center items-center gap-8 text-white ">
-          <SectionHeader text="Skills" />
-          <motion.div
-            className="flex flex-row flex-nowrap relative rounded bg-slate-900 border-black border-[3px] cursor-pointer shadow-[0_0_1px_black] hover:shadow-[0_0_1px_white] transition-[box-shadow] duration-300"
+          </svg>
+          <p className="font-raleway text-3xl mr-3 md:hidden">Skills</p>
+          <button
+            className="relative h-5 w-8 bg-zinc-600 rounded-full cursor-pointer border border-black hover:border-white transition-colors duration-300"
             onClick={toggleShowText}
-            animate={
-              inView
-                ? { opacity: 1, transition: { duration: 1, delay: 0.5 } }
-                : { opacity: 0 }
-            }
+            aria-label="toggleSkillText"
           >
-            <motion.span
-              className="absolute top-0 h-full w-1/2 border-[3px] border-orange-500 rounded"
-              animate={{
-                left: showText ? "50%" : "0",
-                transition: { duration: 0.5, ease: "easeInOut" },
-              }}
+            <div
+              className={`absolute h-6 w-6 left-0 top-1/2 -translate-y-1/2 bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)] rounded-full ${
+                showText ? "translate-x-4" : "-translate-x-2"
+              } transition-[transform] duration-500 ease-in-out`}
             />
-            <p
-              className={`px-4 py-1 rounded bg-slate-900 font-mono transition-colors duration-500 ${
-                showText ? "text-gray-500" : ""
-              }`}
-            >
-              Icon
-            </p>
-            <p
-              className={`px-4 py-1 rounded bg-slate-900 font-mono transition-colors duration-500 ${
-                showText ? "" : "text-gray-500"
-              }`}
-            >
-              Text
-            </p>
-          </motion.div>
-          <motion.div
-            className="w-full max-w-[32rem] gap-6 flex flex-wrap justify-center px-4"
-            initial="hidden"
-            animate={inView ? "show" : ""}
-            variants={container}
-            ref={ref}
-          >
-            {skillList.map((skill, i) => {
-              return (
-                <SkillIcon
-                  index={i}
-                  name={skill.name}
-                  path={skill.path}
-                  showText={iconState[i]}
-                  handleClick={() => handleClick(i)}
-                  key={i}
-                />
-              );
-            })}
-          </motion.div>
+          </button>
+        </div>
+
+        <div className="grid justify-between grid-cols-[repeat(auto-fill,4rem)] md:grid-cols-[repeat(auto-fill,5rem)] gap-4 grow">
+          {skillList.map((skill, i) => {
+            return (
+              <SkillIcon
+                index={i}
+                name={skill.name}
+                path={skill.path}
+                showText={iconState[i]}
+                handleClick={() => handleClick(i)}
+                key={i}
+              />
+            );
+          })}
         </div>
       </div>
-    </Element>
+    </div>
   );
 }

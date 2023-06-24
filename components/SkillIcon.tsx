@@ -41,7 +41,7 @@ export default function SkillIcon({
 
   return (
     <motion.div
-      className="relative h-20 w-20 flex justify-center items-center cursor-pointer rounded-full"
+      className="relative h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem] md:h-20 md:w-20 flex justify-center items-center cursor-pointer rounded-full"
       style={{ perspective: "120px" }}
       onClick={flipSelf}
       variants={variants}
@@ -55,7 +55,7 @@ export default function SkillIcon({
         }}
       >
         <motion.div
-          className="absolute w-full h-full bg-slate-900 p-4 border-[3px] border-black hover:border-orange-500 transition-colors duration-300 rounded-full flex justify-center items-center shadow-sm shadow-slate-900"
+          className="absolute w-full h-full bg-[#09090b] p-2 sm:p-3 md:p-4 border-[3px] border-black hover:drop-shadow-white-sm transition-[drop_shadow] duration-200 rounded-full flex justify-center items-center"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
@@ -73,7 +73,7 @@ export default function SkillIcon({
           />
         </motion.div>
         <motion.div
-          className="absolute w-full h-full flex justify-center items-center bg-slate-900 p-4 border-[3px] border-black hover:border-orange-500 transition-colors duration-300 rounded-full shadow-sm shadow-slate-900"
+          className="absolute w-full h-full flex justify-center items-center bg-[#09090b] p-4 border-[3px] border-black hover:drop-shadow-white-sm transition-[drop_shadow] duration-200 rounded-full"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
@@ -82,8 +82,7 @@ export default function SkillIcon({
             transform: "rotateX(0deg)",
           }}
         >
-          <span className="absolute w-1/2 h-1/2 bg-slate-700 rotate-45 border-2 border-black" />
-          <p className="relative font-mono">{name}</p>
+          <p className="relative font-mono text-sm">{name}</p>
         </motion.div>
       </motion.div>
     </motion.div>

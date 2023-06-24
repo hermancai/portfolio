@@ -25,6 +25,10 @@
     filter: drop-shadow(0 0 0.4rem rgb(255,255,255))
   }
 
+  .drop-shadow-white-sm {
+    filter: drop-shadow(0 0 0.2rem rgb(255,255,255))
+  }
+
   .drop-shadow-orange {
     filter: drop-shadow(0 0 0.4rem rgb(249,115,22))
   }
@@ -48,12 +52,12 @@
 
 /* For Firefox */
 html {
-  scrollbar-color: gray rgb(15, 23, 42);
+  scrollbar-color: gray rgb(0,0,0);
 }
 
 /* For Chrome */
 ::-webkit-scrollbar {
-  background-color: rgb(15, 23, 42);
+  background-color: rgb(0,0,0);
 }
 
 ::-webkit-scrollbar-thumb {
