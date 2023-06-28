@@ -8,6 +8,8 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import { ToastContainer, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   return (
@@ -59,6 +61,16 @@ export default function Home() {
       <main className="bg-zinc-900">
         <Navbar />
         <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        <ToastContainer
+          position="bottom-left"
+          draggable={false}
+          hideProgressBar={true}
+          transition={Slide}
+        />
       </main>
     </>
   );
