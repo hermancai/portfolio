@@ -15,12 +15,12 @@ interface CardProps {
 
 export default function ProjectCard({ project }: CardProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <Image
         src={project.image}
         alt={project.title + " screenshot"}
-        width={0}
-        height={0}
+        width={500}
+        height={500}
         sizes="(max-width:450px) 75vw"
         className="h-auto w-full"
       />
