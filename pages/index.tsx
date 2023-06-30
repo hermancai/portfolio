@@ -44,7 +44,7 @@ export default function Home() {
         />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f172a" />
       </Head>
-      {/* <Script
+      <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-3HRV9HKLT0"
         strategy="afterInteractive"
       />
@@ -56,7 +56,7 @@ export default function Home() {
 
           gtag('config', 'G-3HRV9HKLT0');
         `}
-      </Script> */}
+      </Script>
       <main className="bg-zinc-900">
         <Navbar />
         <Hero />
