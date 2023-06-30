@@ -1,4 +1,3 @@
-import React from "react";
 import Head from "next/head";
 import Script from "next/script";
 import Navbar from "../components/Navbar";
@@ -22,7 +21,7 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="msapplication-TileColor" content="#0f172a" />
+        <meta name="msapplication-TileColor" content="#18181b" />
         <link rel="manifest" href="manifest.json" />
         <link rel="icon" href="/favicon.ico" />
         <link
