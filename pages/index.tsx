@@ -4,19 +4,13 @@ import Script from "next/script";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import { ToastContainer, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
-  // Reset scroll position to top on page reload
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.history.scrollRestoration = "manual";
-    }
-  }, []);
-
   return (
     <>
       <Head>
@@ -50,7 +44,7 @@ export default function Home() {
         />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f172a" />
       </Head>
-      <Script
+      {/* <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-3HRV9HKLT0"
         strategy="afterInteractive"
       />
@@ -62,17 +56,20 @@ export default function Home() {
 
           gtag('config', 'G-3HRV9HKLT0');
         `}
-      </Script>
-      <main>
-        <div>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Contact />
-          <Navbar />
-        </div>
+      </Script> */}
+      <main className="bg-zinc-900">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
         <Footer />
+        <ToastContainer
+          position="bottom-left"
+          draggable={false}
+          hideProgressBar={true}
+          transition={Slide}
+        />
       </main>
     </>
   );

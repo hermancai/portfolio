@@ -1,6 +1,6 @@
 import { motion, AnimationProps } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import { useState, useEffect } from "react";
 
 interface Props {
   name: string;
@@ -26,10 +26,10 @@ export default function SkillIcon({
   index,
   handleClick,
 }: Props) {
-  const [delay, setDelay] = React.useState(0);
+  const [delay, setDelay] = useState(0);
 
   // Add stagger effect when all icons should flip
-  React.useEffect(() => {
+  useEffect(() => {
     setDelay(index * 0.05);
   }, [showText, index]);
 
@@ -41,7 +41,7 @@ export default function SkillIcon({
 
   return (
     <motion.div
-      className="relative h-20 w-20 flex justify-center items-center cursor-pointer rounded-full"
+      className="relative h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem] md:h-20 md:w-20 flex justify-center items-center cursor-pointer rounded-full"
       style={{ perspective: "120px" }}
       onClick={flipSelf}
       variants={variants}
@@ -55,7 +55,7 @@ export default function SkillIcon({
         }}
       >
         <motion.div
-          className="absolute w-full h-full bg-slate-900 p-4 border-[3px] border-black hover:border-orange-500 transition-colors duration-300 rounded-full flex justify-center items-center shadow-sm shadow-slate-900"
+          className="absolute w-full h-full bg-zinc-950 p-2 sm:p-3 md:p-4 border-[3px] border-black hover:drop-shadow-white-sm transition-[drop_shadow] duration-200 rounded-full flex justify-center items-center"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
@@ -69,11 +69,11 @@ export default function SkillIcon({
             width={0}
             height={0}
             className="object-fill w-3/4 h-3/4"
-            sizes="(max-width: 768px) 25vw,33vw"
+            sizes="(max-width: 640px) 25vw,33vw"
           />
         </motion.div>
         <motion.div
-          className="absolute w-full h-full flex justify-center items-center bg-slate-900 p-4 border-[3px] border-black hover:border-orange-500 transition-colors duration-300 rounded-full shadow-sm shadow-slate-900"
+          className="absolute w-full h-full flex justify-center items-center bg-zinc-950 p-4 border-[3px] border-black hover:drop-shadow-white-sm transition-[drop_shadow] duration-200 rounded-full"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
@@ -82,8 +82,7 @@ export default function SkillIcon({
             transform: "rotateX(0deg)",
           }}
         >
-          <span className="absolute w-1/2 h-1/2 bg-slate-700 rotate-45 border-2 border-black" />
-          <p className="relative font-mono">{name}</p>
+          <p className="relative font-mono text-sm">{name}</p>
         </motion.div>
       </motion.div>
     </motion.div>
