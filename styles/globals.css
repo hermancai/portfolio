@@ -5,6 +5,7 @@
 @font-face {
   font-family: "Raleway";
   src: url("../public/fonts/Raleway-Regular.ttf");
+  font-display: swap;
 }
 
 @layer utilities {

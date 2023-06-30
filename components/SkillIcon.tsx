@@ -69,7 +69,7 @@ export default function SkillIcon({
             width={0}
             height={0}
             className="object-fill w-3/4 h-3/4"
-            sizes="(max-width: 768px) 25vw,33vw"
+            sizes="(max-width: 640px) 25vw,33vw"
           />
         </motion.div>
         <motion.div

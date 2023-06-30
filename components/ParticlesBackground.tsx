@@ -4,6 +4,7 @@ import type { Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 
 const options: ISourceOptions = {
+  pauseOnOutsideViewport: true,
   background: {
     color: "transparent",
   },
