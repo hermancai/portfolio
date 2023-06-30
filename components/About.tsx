@@ -1,6 +1,11 @@
+import Skills from "./Skills";
+
 export default function About() {
   return (
-    <div className="flex flex-col justify-center items-center text-white">
+    <div
+      id="about"
+      className="flex flex-col justify-center items-center text-white scroll-mt-12"
+    >
       <div className="w-[95%] md:w-[85%] sm:w-3/4 flex flex-row max-w-[50rem] p-8 gap-8">
         <div className="justify-center items-center hidden md:flex">
           <svg
@@ -54,7 +59,7 @@ export default function About() {
               href="https://github.com/hermancai"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-zinc-900 w-min hover:drop-shadow-white transition-[drop_shadow] duration-200"
+              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-[#09090b] w-min hover:drop-shadow-white-sm transition-[drop_shadow] duration-200"
             >
               GitHub
             </a>
@@ -62,13 +67,14 @@ export default function About() {
               href="https://www.linkedin.com/in/hermancai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-zinc-900 w-min hover:drop-shadow-white transition-[drop_shadow] duration-200"
+              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-[#09090b] w-min hover:drop-shadow-white-sm transition-[drop_shadow] duration-200"
             >
               LinkedIn
             </a>
           </div>
         </div>
       </div>
+      <Skills />
     </div>
   );
 }

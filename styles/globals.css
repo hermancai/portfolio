@@ -32,6 +32,36 @@
   .drop-shadow-orange {
     filter: drop-shadow(0 0 0.4rem rgb(249,115,22))
   }
+
+  .bg-border-gradient {
+    background: linear-gradient(#18181b,#18181b) padding-box, linear-gradient(45deg,#ef4444,#f97316,#eab308) border-box;
+  }
+
+  .menu-triangle:before {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 9px;
+    top: -8px;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #09090b transparent;
+    z-index: 10;
+  }
+
+  .menu-triangle:after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 8px;
+    top: -9px;
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent #a1a1aa transparent;
+    z-index: 9;
+  }
 }
 
 #hero-button::after {

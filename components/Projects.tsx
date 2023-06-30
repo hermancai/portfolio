@@ -55,7 +55,10 @@ const cardList: CardContent[] = [
 
 export default function Projects() {
   return (
-    <div className="flex flex-col justify-center items-center text-white">
+    <div
+      id="projects"
+      className="flex flex-col justify-center items-center text-white scroll-mt-12"
+    >
       <div className="w-[95%] md:w-[85%] sm:w-3/4 flex flex-row max-w-[50rem] p-8 gap-8">
         <div className="md:min-w-[8rem] md:min-h-[8rem] justify-center hidden md:flex md:mt-8">
           <svg

@@ -84,7 +84,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center text-white">
+    <div
+      id="contact"
+      className="flex flex-col justify-center items-center text-white scroll-mt-12"
+    >
       <div className="w-[95%] md:w-[85%] sm:w-3/4 flex flex-row max-w-[50rem] p-8 gap-8">
         <div className="md:min-w-[8rem] md:min-h-[8rem] justify-center hidden md:flex md:mt-8">
           <svg
@@ -104,14 +107,14 @@ export default function Contact() {
         </div>
         <div className="flex flex-col gap-2 w-full">
           <div className="flex flex-row items-center gap-3">
-            <div>
+            <div className="block md:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={0.5}
                 stroke="currentColor"
-                className="w-10 h-10 block md:hidden"
+                className="w-10 h-10"
               >
                 <path
                   strokeLinecap="round"

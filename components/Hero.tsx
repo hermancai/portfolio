@@ -3,7 +3,10 @@ import ParticlesGlobe from "./ParticlesGlobe";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen flex justify-center items-center relative">
+    <div
+      id="hero"
+      className="min-h-screen flex justify-center items-center relative"
+    >
       <span className="absolute bottom-0 w-full h-[10%] bg-gradient-to-t from-zinc-900 z-30" />
       <div className="w-[80%] sm:w-3/4 px-4 py-32 flex flex-col justify-center max-w-[50rem]">
         <div className="flex flex-col font-raleway text-white z-20 gap-2 sm:gap-4">
@@ -24,10 +27,24 @@ export default function Hero() {
           </div>
 
           <div className="mt-2 whitespace-nowrap text-base sm:text-lg gap-4 flex">
-            <button className="px-2 py-1 sm:px-3 rounded bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)] text-black w-min hover:drop-shadow-orange transition-[drop_shadow] duration-200">
+            <button
+              className="cursor-pointer px-2 py-1 sm:px-3 rounded bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)] text-black w-min hover:drop-shadow-orange transition-[drop_shadow] duration-200"
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               About Me
             </button>
-            <button className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-zinc-900 w-min hover:drop-shadow-white transition-[drop_shadow] duration-200">
+            <button
+              className="cursor-pointer px-2 py-1 sm:px-3 rounded border border-white text-white bg-zinc-900 w-min hover:drop-shadow-white transition-[drop_shadow] duration-200"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               Contact Me
             </button>
           </div>
