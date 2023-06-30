@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col justify-center items-center bg-[#09090b] mt-12">
+    <div className="flex flex-col justify-center items-center bg-zinc-950 mt-12">
       <div className="flex flex-col gap-4 justify-center items-center w-full max-w-[50rem] py-16">
         <div className="flex flex-row flex-nowrap gap-8">
           <a

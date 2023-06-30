@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="flex flex-col font-raleway text-white z-20 gap-2 sm:gap-4">
           <div className="flex flex-col sm:flex-row whitespace-pre text-lg sm:text-2xl">
             <p>
-              <span className="text-transparent bg-clip-text bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)]">
+              <span className="text-transparent bg-clip-text bg-gradient-orange">
                 Herman Cai{" "}
               </span>
             </p>
@@ -28,7 +28,7 @@ export default function Hero() {
 
           <div className="mt-2 whitespace-nowrap text-base sm:text-lg gap-4 flex">
             <button
-              className="cursor-pointer px-2 py-1 sm:px-3 rounded bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)] text-black w-min hover:drop-shadow-orange transition-[drop_shadow] duration-200"
+              className="cursor-pointer px-2 py-1 sm:px-3 rounded bg-gradient-orange text-black w-min hover:drop-shadow-orange transition-[drop_shadow] duration-200"
               onClick={() =>
                 document
                   .getElementById("about")

@@ -93,7 +93,7 @@ export default function Projects() {
               />
             </svg>
             <p>
-              <span className="font-raleway text-3xl whitespace-nowrap text-transparent bg-clip-text bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)]">
+              <span className="font-raleway text-3xl whitespace-nowrap text-transparent bg-clip-text bg-gradient-orange">
                 Projects
               </span>
             </p>

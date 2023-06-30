@@ -24,7 +24,7 @@ export default function Navbar() {
           }
         >
           About
-          <span className="absolute bottom-0 left-0 h-[2px] w-full transition-[opacity] group-hover:opacity-100 opacity-0 duration-500 ease-in-out bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)]" />
+          <span className="absolute bottom-0 left-0 h-[2px] w-full transition-[opacity] group-hover:opacity-100 opacity-0 duration-500 ease-in-out bg-gradient-orange" />
         </button>
         <button
           className="relative group"
@@ -35,7 +35,7 @@ export default function Navbar() {
           }
         >
           Projects
-          <span className="absolute bottom-0 left-0 h-[2px] w-full transition-[opacity] group-hover:opacity-100 opacity-0 duration-500 ease-in-out bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)]" />
+          <span className="absolute bottom-0 left-0 h-[2px] w-full transition-[opacity] group-hover:opacity-100 opacity-0 duration-500 ease-in-out bg-gradient-orange" />
         </button>
         <button
           className="rounded cursor-pointer border border-white bg-border-gradient w-min px-2 py-1 whitespace-nowrap hover:border-transparent transition-[border] duration-500"
@@ -74,7 +74,7 @@ export default function Navbar() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 mt-2 border border-zinc-500 rounded bg-[#09090b] divide-y divide-zinc-500 flex flex-col w-32 menu-triangle">
+          <Menu.Items className="absolute right-0 mt-2 border border-zinc-500 rounded bg-zinc-950 divide-y divide-zinc-500 flex flex-col w-32 menu-triangle">
             <Menu.Item as="div" className="p-1">
               <button
                 className="px-2 py-1 hover:bg-zinc-700 rounded text-start w-full"

@@ -126,7 +126,7 @@ export default function ParticlesGlobe() {
         options={options}
         className="h-full rounded-full overflow-hidden bg-zinc-900 isolate"
       />
-      <Image src="/globe.png" alt="globe" fill />
+      <Image src="/globe.png" alt="globe" fill sizes="(max-width:640px) 50vw" />
     </div>
   );
 }

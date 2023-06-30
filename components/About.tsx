@@ -41,7 +41,7 @@ export default function About() {
               />
             </svg>
             <p>
-              <span className="font-raleway text-3xl whitespace-nowrap text-transparent bg-clip-text bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)]">
+              <span className="font-raleway text-3xl whitespace-nowrap text-transparent bg-clip-text bg-gradient-orange">
                 About Me
               </span>
             </p>
@@ -59,7 +59,7 @@ export default function About() {
               href="https://github.com/hermancai"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-[#09090b] w-min hover:drop-shadow-white-sm transition-[drop_shadow] duration-200"
+              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-zinc-950 w-min hover:drop-shadow-white-sm transition-[drop_shadow] duration-200"
             >
               GitHub
             </a>
@@ -67,7 +67,7 @@ export default function About() {
               href="https://www.linkedin.com/in/hermancai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-[#09090b] w-min hover:drop-shadow-white-sm transition-[drop_shadow] duration-200"
+              className="px-2 py-1 sm:px-3 rounded border border-white text-white bg-zinc-950 w-min hover:drop-shadow-white-sm transition-[drop_shadow] duration-200"
             >
               LinkedIn
             </a>

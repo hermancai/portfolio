@@ -125,13 +125,13 @@ export default function Contact() {
             </div>
 
             <p>
-              <span className="font-raleway text-3xl text-transparent bg-clip-text bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)]">
+              <span className="font-raleway text-3xl text-transparent bg-clip-text bg-gradient-orange">
                 Send me a message!
               </span>
             </p>
           </div>
           <form
-            className="flex flex-col rounded bg-[#09090b] p-4 gap-4"
+            className="flex flex-col rounded bg-zinc-950 p-4 gap-4"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col gap-1">
@@ -181,7 +181,7 @@ export default function Contact() {
                 input.email.trim() == "" ||
                 input.message.trim() == ""
               }
-              className="flex justify-center items-center whitespace-nowrap relative hover:drop-shadow-orange bg-transparent disabled:drop-shadow-none before:transition-opacity z-10 before:-z-10 before:duration-300 before:absolute before:w-full before:h-full before:left-0 before:top-0 before:bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)] before:opacity-100 disabled:before:opacity-0 before:rounded w-20 h-9 px-2 py-1 border border-transparent rounded disabled:border-zinc-700 disabled:text-zinc-700 text-black transition-[drop_shadow] duration-200"
+              className="flex justify-center items-center whitespace-nowrap relative hover:drop-shadow-orange bg-transparent disabled:drop-shadow-none before:transition-opacity z-10 before:-z-10 before:duration-300 before:absolute before:w-full before:h-full before:left-0 before:top-0 before:bg-gradient-orange before:opacity-100 disabled:before:opacity-0 before:rounded w-20 h-9 px-2 py-1 border border-transparent rounded disabled:border-zinc-700 disabled:text-zinc-700 text-black transition-[drop_shadow] duration-200"
             >
               {loading ? (
                 <div className="w-4 h-4 border-2 border-t-orange-500 border-b-orange-400 border-l-orange-400 border-r-transparent rounded-full animate-spin" />

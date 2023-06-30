@@ -1,5 +1,5 @@
-import React from "react";
 import SkillIcon from "./SkillIcon";
+import { useState } from "react";
 
 const skillList = [
   { name: "HTML", path: "/icons/html.png" },
@@ -19,8 +19,8 @@ const skillList = [
 ];
 
 export default function Skills() {
-  const [iconState, setIconState] = React.useState(skillList.map(() => false));
-  const [showText, setShowText] = React.useState(false);
+  const [iconState, setIconState] = useState(skillList.map(() => false));
+  const [showText, setShowText] = useState(false);
 
   // Toggle state per individual icon
   const handleClick = (i: number) => {
@@ -36,7 +36,7 @@ export default function Skills() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center text-white">
+    <div className="flex flex-col justify-center items-center text-white w-full">
       <div className="flex flex-col md:flex-row w-[95%] md:w-[85%] sm:w-3/4 max-w-[50rem] p-8 gap-4 md:gap-8">
         <div className="md:min-w-[8rem] md:min-h-[8rem] flex flex-row md:flex-col md:justify-center items-center gap-3">
           <svg
@@ -60,12 +60,12 @@ export default function Skills() {
           </svg>
           <p className="font-raleway text-3xl mr-3 md:hidden">Skills</p>
           <button
-            className="relative h-5 w-8 bg-zinc-600 rounded-full cursor-pointer border border-black hover:border-white transition-colors duration-300"
+            className="relative h-4 w-8 bg-zinc-600 rounded-full cursor-pointer border border-black hover:border-white transition-colors duration-300"
             onClick={toggleShowText}
             aria-label="toggleSkillText"
           >
             <div
-              className={`absolute h-6 w-6 left-0 top-1/2 -translate-y-1/2 bg-[linear-gradient(45deg,#ef4444,#f97316,#eab308)] rounded-full ${
+              className={`absolute h-6 w-6 left-0 top-1/2 -translate-y-1/2 bg-gradient-orange rounded-full ${
                 showText ? "translate-x-4" : "-translate-x-2"
               } transition-[transform] duration-500 ease-in-out`}
             />

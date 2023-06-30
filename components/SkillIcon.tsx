@@ -1,6 +1,6 @@
 import { motion, AnimationProps } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import { useState, useEffect } from "react";
 
 interface Props {
   name: string;
@@ -26,10 +26,10 @@ export default function SkillIcon({
   index,
   handleClick,
 }: Props) {
-  const [delay, setDelay] = React.useState(0);
+  const [delay, setDelay] = useState(0);
 
   // Add stagger effect when all icons should flip
-  React.useEffect(() => {
+  useEffect(() => {
     setDelay(index * 0.05);
   }, [showText, index]);
 
@@ -55,7 +55,7 @@ export default function SkillIcon({
         }}
       >
         <motion.div
-          className="absolute w-full h-full bg-[#09090b] p-2 sm:p-3 md:p-4 border-[3px] border-black hover:drop-shadow-white-sm transition-[drop_shadow] duration-200 rounded-full flex justify-center items-center"
+          className="absolute w-full h-full bg-zinc-950 p-2 sm:p-3 md:p-4 border-[3px] border-black hover:drop-shadow-white-sm transition-[drop_shadow] duration-200 rounded-full flex justify-center items-center"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
@@ -73,7 +73,7 @@ export default function SkillIcon({
           />
         </motion.div>
         <motion.div
-          className="absolute w-full h-full flex justify-center items-center bg-[#09090b] p-4 border-[3px] border-black hover:drop-shadow-white-sm transition-[drop_shadow] duration-200 rounded-full"
+          className="absolute w-full h-full flex justify-center items-center bg-zinc-950 p-4 border-[3px] border-black hover:drop-shadow-white-sm transition-[drop_shadow] duration-200 rounded-full"
           style={{
             WebkitBackfaceVisibility: "hidden",
             backfaceVisibility: "hidden",
