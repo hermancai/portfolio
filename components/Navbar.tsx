@@ -49,7 +49,7 @@ export default function Navbar() {
         </button>
       </div>
       <Menu as="div" className="sm:hidden relative">
-        <Menu.Button aria-label="menu">
+        <Menu.Button aria-label="menu" className="outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -74,7 +74,7 @@ export default function Navbar() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 mt-2 border border-zinc-500 rounded bg-zinc-950 divide-y divide-zinc-500 flex flex-col w-32 menu-triangle">
+          <Menu.Items className="absolute right-0 mt-2 border border-zinc-500 rounded bg-zinc-950 divide-y divide-zinc-500 flex flex-col w-32 menu-triangle outline-none">
             <Menu.Item as="div" className="p-1">
               <button
                 className="px-2 py-1 hover:bg-zinc-700 rounded text-start w-full"
