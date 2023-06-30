@@ -1,4 +1,3 @@
-import React from "react";
 import Head from "next/head";
 import Script from "next/script";
 import Navbar from "../components/Navbar";
@@ -22,7 +21,7 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="msapplication-TileColor" content="#0f172a" />
+        <meta name="msapplication-TileColor" content="#18181b" />
         <link rel="manifest" href="manifest.json" />
         <link rel="icon" href="/favicon.ico" />
         <link
@@ -44,7 +43,7 @@ export default function Home() {
         />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f172a" />
       </Head>
-      {/* <Script
+      <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-3HRV9HKLT0"
         strategy="afterInteractive"
       />
@@ -56,7 +55,7 @@ export default function Home() {
 
           gtag('config', 'G-3HRV9HKLT0');
         `}
-      </Script> */}
+      </Script>
       <main className="bg-zinc-900">
         <Navbar />
         <Hero />
