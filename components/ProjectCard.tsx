@@ -7,6 +7,7 @@ export interface CardContent {
   tech: string[];
   liveLink: string;
   github: string;
+  notes?: string;
 }
 
 interface CardProps {
@@ -42,7 +43,11 @@ export default function ProjectCard({ project }: CardProps) {
         </div>
         <div className="flex flex-row gap-2 my-2 whitespace-nowrap">
           <a
-            className="px-2 py-1 sm:px-3 rounded bg-gradient-orange text-black w-min hover:drop-shadow-orange transition-[drop_shadow] duration-200"
+            className={`px-2 py-1 sm:px-3 rounded text-black w-min ${
+              project.notes
+                ? "border border-zinc-600 text-zinc-600 cursor-default pointer-events-none"
+                : "bg-gradient-orange hover:drop-shadow-orange transition-[drop_shadow] duration-200"
+            }`}
             target="_blank"
             rel="noopener noreferrer"
             href={project.liveLink}
@@ -58,6 +63,9 @@ export default function ProjectCard({ project }: CardProps) {
             GitHub
           </a>
         </div>
+        {project.notes && (
+          <div className="text-red-500 mb-1">{project.notes}</div>
+        )}
       </div>
     </div>
   );

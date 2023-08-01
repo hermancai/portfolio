@@ -3,7 +3,7 @@ import ProjectCard, { CardContent } from "./ProjectCard";
 const cardList: CardContent[] = [
   {
     title: "Cloud Storage",
-    description: "Upload and access remotely stored image files.",
+    description: "Upload and access images on the cloud.",
     image: "/projects/notes.png",
     tech: [
       "Amazon Web Services",
@@ -17,6 +17,7 @@ const cardList: CardContent[] = [
     ],
     liveLink: "https://note-storage.up.railway.app/",
     github: "https://github.com/hermancai/notes",
+    notes: "*** Under reconstruction ***",
   },
   {
     title: "Earthquake Map",
