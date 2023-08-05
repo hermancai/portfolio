@@ -10,7 +10,7 @@ export default function Document() {
             style={{
               width: "100%",
               height: "100vh",
-              backgroundColor: "#1E293B",
+              backgroundColor: "#18181b",
               color: "white",
               display: "flex",
               justifyContent: "center",
@@ -18,7 +18,7 @@ export default function Document() {
               fontFamily: "arial",
             }}
           >
-            <p>Please enable Javascript to see this website.</p>
+            <p>Please enable Javascript.</p>
           </div>
         </noscript>
         <Main />
