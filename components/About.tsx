@@ -46,13 +46,14 @@ export default function About() {
               </span>
             </p>
           </div>
-
           <p>
-            Hello! My name is Herman Cai and I am a full stack developer. I
-            strive for efficiency and pixel-perfection in my web development
-            process. My coding philosophy is that I can learn anything necessary
-            to get the job done. If you can think of it, I can build it. Please
-            feel free to reach out regarding any inquiries or opportunities.
+            Hello! My name is Herman Cai. I&apos;m a full stack developer who
+            strives for efficiency and pixel-perfection in my work. While I
+            enjoy front-end development, I am also capable of building the
+            back-end services that power your business. My coding philosophy is
+            that I can learn anything necessary to get the job done &#8212; if
+            you can think of it, I can build it. Please feel free to reach out
+            regarding any inquiries or opportunities.
           </p>
           <div className="flex flex-row gap-4 mt-2">
             <a
