@@ -28,8 +28,8 @@ export default function SectionLayout({
                 </div>
                 <div className="flex flex-col gap-2 w-full">
                     <div className="flex flex-row items-center gap-2">
-                        {smallIcon}
-                        <p className="font-raleway text-3xl whitespace-nowrap text-transparent bg-clip-text bg-gradient-orange">
+                        <div>{smallIcon}</div>
+                        <p className="font-raleway text-3xl text-transparent bg-clip-text bg-gradient-orange">
                             {title}
                         </p>
                         <div className="ml-3 relative bottom-1">{button}</div>
