@@ -27,7 +27,7 @@ export default function SectionLayout({
                     {largeIcon}
                 </div>
                 <div className="flex flex-col gap-2 w-full">
-                    <div className="flex flex-row items-center gap-2">
+                    <div className="flex flex-row items-center gap-2 md:gap-0">
                         <div>{smallIcon}</div>
                         <p className="font-raleway text-3xl text-transparent bg-clip-text bg-gradient-orange">
                             {title}

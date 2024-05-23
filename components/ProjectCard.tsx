@@ -23,7 +23,7 @@ export default function ProjectCard({ project }: CardProps) {
                 width={500}
                 height={500}
                 sizes="(max-width:450px) 75vw"
-                className="h-auto w-full"
+                className="h-auto w-full border border-black"
             />
 
             <div className="bg-zinc-950 rounded-b py-2 px-4 flex flex-col">

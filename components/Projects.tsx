@@ -19,6 +19,15 @@ const cardList: CardContent[] = [
         liveLink: "https://earthquakemap.vercel.app/",
         github: "https://github.com/hermancai/eqmap_next",
     },
+    {
+        title: "WebDevStudy",
+        description:
+            "View common web development technical interview questions.",
+        image: "/projects/webdevstudy.png",
+        tech: ["Next.js"],
+        liveLink: "https://webdevstudy.vercel.app/",
+        github: "https://github.com/hermancai/webdevstudy",
+    },
 ];
 
 export default function Projects() {
