@@ -16,6 +16,8 @@ MAILGUN_DOMAIN=<mailgun custom domain>
 MAILGUN_API=<mailgun private api key>
 ```
 
+To generate MAILGUN_API: mailgun.com >> Sending >> Domain Settings >> Sending API Keys >> Add sending key
+
 Run locally:
 
 ```
@@ -24,4 +26,3 @@ npm run dev
 ```
 
 Open [localhost:3000](http:localhost:3000)
-

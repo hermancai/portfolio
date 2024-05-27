@@ -1,3 +1,5 @@
+"use client";
+
 import SectionLayout from "./SectionLayout";
 import SkillIcon from "./SkillIcon";
 import { useState } from "react";
