@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
     title: "Herman Cai's Portfolio",
@@ -22,6 +23,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>{children}</body>
+            <GoogleAnalytics gaId="G-3HRV9HKLT0" />
         </html>
     );
 }
