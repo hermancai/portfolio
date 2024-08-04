@@ -80,7 +80,7 @@ export default function ParticlesGlobe() {
             background: {
                 color: "transparent",
             },
-            fpsLimit: 60,
+            fpsLimit: 30,
             fullScreen: { enable: false },
             particles: {
                 links: {
@@ -102,7 +102,7 @@ export default function ParticlesGlobe() {
                 },
                 collisions: { enable: false },
                 number: {
-                    value: 75,
+                    value: 25,
                     density: {
                         enable: true,
                         area: 75,
