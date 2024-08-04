@@ -10,7 +10,7 @@ const options: ISourceOptions = {
     background: {
         color: "transparent",
     },
-    fpsLimit: 60,
+    fpsLimit: 30,
     fullScreen: { enable: false },
     interactivity: {
         events: {
@@ -47,7 +47,7 @@ const options: ISourceOptions = {
                 enable: true,
                 area: 1000,
             },
-            value: 60,
+            value: 45,
         },
         opacity: {
             value: 0.5,
