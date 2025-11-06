@@ -15,7 +15,7 @@ const options: ISourceOptions = {
     interactivity: {
         events: {
             onHover: {
-                enable: true,
+                enable: false,
                 mode: ["grab", "connect"],
             },
         },
