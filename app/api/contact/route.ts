@@ -13,6 +13,10 @@ export async function POST(req: Request) {
 
     const body = await req.json();
 
+    if (body.syrupJar !== "") {
+        return NextResponse.json({ error: true }, { status: 400 });
+    }
+
     const mailgun = new Mailgun(formData);
     const mg = mailgun.client({ username: "api", key: MAILGUN_API });
 

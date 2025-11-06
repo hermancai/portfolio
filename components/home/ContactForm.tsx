@@ -56,6 +56,7 @@ export default function ContactForm() {
         name: "",
         email: "",
         message: "",
+        syrupJar: "",
     });
     const [loading, setLoading] = useState(false);
 
@@ -68,6 +69,11 @@ export default function ContactForm() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
+
+        if (input.syrupJar !== "") {
+            setLoading(false);
+            return toast(ErrorToast);
+        }
 
         const response = await fetch("/api/contact", {
             method: "POST",
@@ -87,7 +93,7 @@ export default function ContactForm() {
 
     return (
         <form
-            className="flex flex-col rounded bg-zinc-950 p-4 gap-4"
+            className="flex flex-col rounded bg-zinc-950 p-4 gap-4 relative"
             onSubmit={handleSubmit}
         >
             <div className="flex flex-col gap-1">
@@ -98,6 +104,7 @@ export default function ContactForm() {
                     type="text"
                     name="name"
                     id="name"
+                    autoComplete="name"
                     onChange={handleOnChange}
                     onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
                     className=" bg-zinc-800 rounded px-2 py-1 border border-transparent focus:outline-transparent focus:outline focus:border-zinc-400 hover:border-zinc-600 transition-colors duration-200"
@@ -111,6 +118,7 @@ export default function ContactForm() {
                     type="text"
                     name="email"
                     id="email"
+                    autoComplete="email"
                     onChange={handleOnChange}
                     onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
                     className=" bg-zinc-800 rounded px-2 py-1 border border-transparent focus:outline-transparent focus:outline focus:border-zinc-400 hover:border-zinc-600 transition-colors duration-200"
@@ -126,6 +134,21 @@ export default function ContactForm() {
                     id="message"
                     className="resize-y min-h-[8rem] bg-zinc-800 rounded px-2 py-1 border border-transparent focus:outline-transparent focus:outline focus:border-zinc-400 hover:border-zinc-600 transition-colors duration-200"
                     onChange={handleOnChange}
+                />
+            </div>
+
+            <div className="absolute left-[-9999px] top-0" aria-hidden="true">
+                <label htmlFor="syrupJar" className="text-zinc-400">
+                    Syrup Jar
+                </label>
+                <input
+                    tabIndex={-1}
+                    type="text"
+                    name="syrupJar"
+                    id="syrupJar"
+                    onChange={handleOnChange}
+                    onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
+                    className=" bg-zinc-800 rounded px-2 py-1 border border-transparent focus:outline-transparent focus:outline focus:border-zinc-400 hover:border-zinc-600 transition-colors duration-200"
                 />
             </div>
 
