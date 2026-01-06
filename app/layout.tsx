@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Background from "../components/home/Background";
 
 export const metadata: Metadata = {
     title: "Herman Cai's Portfolio",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-    themeColor: "#09090b",
+    themeColor: "#000000",
 };
 
 export default function RootLayout({
@@ -22,7 +23,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body className="text-white bg-black font-raleway">
+                <Background />
+                {children}
+            </body>
             <GoogleAnalytics gaId="G-3HRV9HKLT0" />
         </html>
     );
