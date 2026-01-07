@@ -24,13 +24,13 @@ export default function Hero() {
     };
 
     return (
-        <div className="relative min-h-screen flex flex-col items-center justify-center py-12 gap-8 overflow-hidden">
-            <div className="flex flex-col items-center justify-center grow gap-8">
+        <div className="relative min-h-screen flex flex-col items-center justify-center pt-12 overflow-hidden">
+            <div className="flex flex-col items-center justify-center gap-16">
                 <motion.div
                     initial="hidden"
                     animate="show"
                     transition={{ delayChildren: stagger(0.05) }}
-                    className="flex flex-col items-center justify-center my-8 px-4 text-center gap-1 z-10"
+                    className="flex flex-col items-center justify-center px-4 text-center gap-1 z-10"
                 >
                     <motion.p
                         variants={titleVariants}
@@ -60,7 +60,9 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-            <ContactButton />
+            <div className="flex h-full grow z-10 items-center mt-16">
+                <ContactButton />
+            </div>
         </div>
     );
 }

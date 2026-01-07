@@ -25,25 +25,23 @@ export default function ProjectCard({ project }: CardProps) {
     const [showInfo, setShowInfo] = useState(false);
 
     useLayoutEffect(() => {
-        if (!windowRef.current) return;
+        if (!windowRef.current || !imageRef.current) return;
 
-        const resizeObserver = new ResizeObserver(([entry]) => {
-            setWindowHeight(entry.contentRect.height);
+        const observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                if (entry.target === windowRef.current) {
+                    setWindowHeight(entry.contentRect.height);
+                }
+                if (entry.target === imageRef.current) {
+                    setImageHeight(entry.contentRect.height);
+                }
+            }
         });
 
-        resizeObserver.observe(windowRef.current);
-        return () => resizeObserver.disconnect();
-    }, []);
+        observer.observe(windowRef.current);
+        observer.observe(imageRef.current);
 
-    useLayoutEffect(() => {
-        if (!imageRef.current) return;
-
-        const resizeObserver = new ResizeObserver(([entry]) => {
-            setImageHeight(entry.contentRect.height);
-        });
-
-        resizeObserver.observe(imageRef.current);
-        return () => resizeObserver.disconnect();
+        return () => observer.disconnect();
     }, []);
 
     return (
@@ -94,7 +92,7 @@ export default function ProjectCard({ project }: CardProps) {
                             href={project.github}
                             target="_blank"
                             tabIndex={showInfo ? 0 : -1}
-                            className="relative flex flex-nowrap gap-1 p-2 border border-green-400 mt-auto hover:bg-neutral-900 transition-colors"
+                            className="relative flex flex-nowrap gap-1 p-2 border border-green-400 mt-auto mb-px hover:bg-neutral-900 transition-colors"
                         >
                             <Image
                                 src="/icons/github.png"

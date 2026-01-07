@@ -1,18 +1,24 @@
 "use client";
 
-import { useRef, useState, useLayoutEffect, CSSProperties } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import { motion } from "motion/react";
 
 export default function ContactButton() {
     const pRef = useRef<HTMLParagraphElement>(null);
     const svgRef = useRef<HTMLDivElement>(null);
-    const [pWidth, setPWidth] = useState(0);
-    const [svgWidth, setSvgWidth] = useState(0);
+    const [totalWidth, setTotalWidth] = useState(0);
 
     useLayoutEffect(() => {
-        if (!pRef.current || !svgRef.current) return;
-        setPWidth(pRef.current.clientWidth);
-        setSvgWidth(svgRef.current.clientWidth);
+        if (!pRef.current) return;
+
+        const measure = () => {
+            const pW = pRef.current!.getBoundingClientRect().width;
+            // svg width = 24px; padding = 4px;
+            setTotalWidth(Math.ceil(pW + 28));
+        };
+
+        measure();
+        document.fonts.ready.then(measure);
     }, []);
 
     return (
@@ -24,16 +30,10 @@ export default function ContactButton() {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="my-12 px-4 py-2 bg-white text-black group z-10"
-            style={
-                {
-                    "--w": `${pWidth + svgWidth + 8}px`,
-                    "--svgWidth": `${svgWidth + 4}px`,
-                } as CSSProperties
-            }
+            className="px-4 py-2 bg-white text-black group z-10 h-min"
         >
-            <div className="overflow-hidden w-[--w]">
-                <div className="flex flex-nowrap gap-1 group-hover:-translate-x-[var(--svgWidth)] transition-transform duration-500">
+            <div className="overflow-hidden" style={{ width: totalWidth }}>
+                <div className="flex flex-nowrap gap-1 group-hover:-translate-x-7 transition-transform duration-500">
                     <div
                         ref={svgRef}
                         className="opacity-1 group-hover:opacity-0 transition-[opacity]"
