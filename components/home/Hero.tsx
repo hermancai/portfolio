@@ -24,8 +24,8 @@ export default function Hero() {
     };
 
     return (
-        <div className="relative min-h-screen flex flex-col items-center justify-center pt-12 overflow-hidden">
-            <div className="flex flex-col items-center justify-center gap-16">
+        <div className="min-h-screen flex flex-col items-center justify-center overflow-hidden">
+            <div className="relative max-h-[768px] flex flex-col items-center gap-12 py-12">
                 <motion.div
                     initial="hidden"
                     animate="show"
@@ -59,9 +59,9 @@ export default function Hero() {
                         />
                     </div>
                 </div>
-            </div>
-            <div className="flex h-full grow z-10 items-center mt-16">
-                <ContactButton />
+                <div className="flex h-full grow z-10 items-center mt-8">
+                    <ContactButton />
+                </div>
             </div>
         </div>
     );
